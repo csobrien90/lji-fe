@@ -1,4 +1,4 @@
 /node_modules
 /build
-*.js
-*.jsx
+src/*.js
+src/*.jsx
