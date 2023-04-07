@@ -20,7 +20,10 @@
 	"noUnusedLocals": true,
 	"noUnusedParameters": true,
 	"strictNullChecks": true,
-	"strictFunctionTypes": true
+	"strictFunctionTypes": true,
+	"paths": {
+		"@/*": ["./src/*"]
+	}
   },
   "include": [
 	"src/**/*"
