@@ -6,6 +6,7 @@ import Home from "./pages/Home"
 import WhoWeAre from "./pages/WhoWeAre"
 import WhatWeDo from "./pages/WhatWeDo"
 import GetInvolved from "./pages/GetInvolved"
+import ArtistServices from "./pages/ArtistServices"
 
 // import template components
 import Header from "./components/Header"
@@ -37,6 +38,7 @@ const App = () => {
 				<Route path="/who-we-are" element={<WhoWeAre {...data} />} />
 				<Route path="/what-we-do" element={<WhatWeDo {...data} />} />
 				<Route path="/get-involved" element={<GetInvolved {...data} />} />
+				<Route path="/artist-services" element={<ArtistServices />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

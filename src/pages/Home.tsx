@@ -1,6 +1,15 @@
+import Mission from "../components/Mission"
+import Events from "../components/Events"
+import News from "../components/News"
+
 const Home = () => {
   return (
-	<h2>Home</h2>
+	<main>
+		<h2>Home</h2>
+		<Mission />
+		<Events limit={1} />
+		<News />
+	</main>
   )
 }
 
