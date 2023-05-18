@@ -1,5 +1,4 @@
-const NewsletterSignup = (props: any) => {
-	console.log(props)
+const NewsletterSignup = () => {
 	return (
 		<form></form>
 	)

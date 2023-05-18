@@ -6,7 +6,7 @@ const Home = () => {
   return (
 	<main>
 		<h2>Home</h2>
-		<Mission />
+		<Mission layout='feature' />
 		<Events limit={1} />
 		<News />
 	</main>

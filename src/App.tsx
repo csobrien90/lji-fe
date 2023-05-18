@@ -6,7 +6,8 @@ import Home from "./pages/Home"
 import WhoWeAre from "./pages/WhoWeAre"
 import WhatWeDo from "./pages/WhatWeDo"
 import GetInvolved from "./pages/GetInvolved"
-import ArtistServices from "./pages/ArtistServices"
+import ArtistResources from "./pages/ArtistResources"
+import CodeOfConduct from "./pages/CodeOfConduct"
 
 // import template components
 import Header from "./components/Header"
@@ -22,11 +23,31 @@ import "./index.css"
 import { LjiData } from "./types"
 
 const App = () => {
-	const [data, setData] = useState<LjiData>({})
+	const defaultLjiData: LjiData = {
+		blog: '',
+		staff: [
+			{
+				name: 'Chad O\'Brien',
+				role: 'Operations Manager',
+				image: 'https://unsplash.com/200x200',
+				imageAlt: 'image-alt',
+				bio: 'INSERT BIO HERE',
+				instagram: 'ig.com/obrientrombone',
+				website: 'https://web.site'
+			}
+		],
+		newsItem: '',
+		event: ''
+	}
+
+	const [data, setData] = useState<LjiData>(defaultLjiData)
 
 	useEffect(() => {
 		fetchInitialData().then((data) => {
 			setData(data)
+		}).catch(reason => {
+			console.error(reason)
+			setData(defaultLjiData)
 		})
 	}, [])
 	
@@ -38,7 +59,8 @@ const App = () => {
 				<Route path="/who-we-are" element={<WhoWeAre {...data} />} />
 				<Route path="/what-we-do" element={<WhatWeDo {...data} />} />
 				<Route path="/get-involved" element={<GetInvolved {...data} />} />
-				<Route path="/artist-services" element={<ArtistServices />} />
+				<Route path="/artist-resources" element={<ArtistResources />} />
+				<Route path="/code-of-conduct" element={<CodeOfConduct />} />
 			</Routes>
 			<Footer />
 		</BrowserRouter>

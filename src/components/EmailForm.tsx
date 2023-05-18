@@ -1,5 +1,4 @@
-const EmailForm = (props: any) => {
-	console.log(props)
+const EmailForm = () => {
 	return (
 		<form></form>
 	)

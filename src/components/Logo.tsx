@@ -1,7 +1,8 @@
-const Logo = (props: any) => {
-	console.log(props)
+import { LogoProps } from "@/types"
+
+const Logo = ({ size }: LogoProps) => {
 	return (
-		<img src=""></img>
+		<img src='' className={`logo-${size}`}></img>
 	)
 }
 

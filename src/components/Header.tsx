@@ -8,7 +8,7 @@ const Header = () => {
 
   return (
 	<header>
-		<h1>Louisville Jazz Initiative</h1>
+		<h1 className="sr-only">Louisville Jazz Initiative</h1>
 		<Logo size={'large'} />
 		<Navigation />
 		{location.pathname !== '/get-involved' && <Donate form={'button'} />}

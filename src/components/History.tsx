@@ -1,7 +1,10 @@
 const History = (props: any) => {
 	console.log(props)
 	return (
-		<h3>Our History</h3>
+		<section id="history">
+			<h3>Our History</h3>
+			<p>[HISTORY COPY GOES HERE]</p>
+		</section>
 	)
 }
 
