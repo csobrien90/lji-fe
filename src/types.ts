@@ -1,5 +1,5 @@
 export interface LjiData {
-	blog: any
+	blogPosts: BlogPost[]
 	staff: StaffMember[]
 	newsItems: NewsItem[]
 	events: Event[]
@@ -34,6 +34,17 @@ export interface NewsItem {
 	linkText: string | null
 }
 
+export interface BlogPost {
+	title: string,
+	body: string,
+	bodyImage: string,
+	bodyImageAlt: string,
+	author: string,
+	authorImage: string,
+	authorImageAlt: string,
+	datePublished: string,
+}
+
 export interface DonateProps {
 	form: 'button' | 'full' | 'modal'
 }
@@ -61,6 +72,10 @@ export interface EventProps {
 
 export interface NewsProps {
 	newsItems: NewsItem[]
+}
+
+export interface BlogProps {
+	blogPosts: BlogPost[]
 }
 
 export enum formTitles { 'email', 'newsletter', 'volunteer' }

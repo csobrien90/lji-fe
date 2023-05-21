@@ -1,7 +1,8 @@
+import { BlogProps } from "../types"
 import BlogPost from "./BlogPost"
 
-const Blog = (props: any) => {
-	console.log(props)
+const Blog = ({ blogPosts }: BlogProps) => {
+	console.log(blogPosts)
 	return (
 		<section id="blog">
 			<h3>Blog</h3>

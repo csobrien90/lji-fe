@@ -24,7 +24,18 @@ import { LjiData } from "./types"
 
 const App = () => {
 	const defaultLjiData: LjiData = {
-		blog: '',
+		blogPosts: [
+			{
+				title: '',
+				body: '',
+				bodyImage: '',
+				bodyImageAlt: '',
+				author: '',
+				authorImage: '',
+				authorImageAlt: '',
+				datePublished: '',
+			}
+		],
 		staff: [
 			{
 				name: 'Chad O\'Brien',
