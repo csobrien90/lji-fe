@@ -1,6 +1,6 @@
-const NewsletterSignup = () => {
+const NewsletterSignup = (): JSX.Element => {
 	return (
-		<form></form>
+		<div id="mailchimp-newsletter-form">Mailchimp Newsletter Form</div>
 	)
 }
 

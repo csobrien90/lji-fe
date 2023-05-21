@@ -1,7 +1,6 @@
-const VolunteerSignup = (props: any) => {
-	console.log(props)
+const VolunteerSignup = (): JSX.Element => {
 	return (
-		<form></form>
+		<div id="mailchimp-volunteer-form">Mailchimp Volunteer Form</div>
 	)
 }
 

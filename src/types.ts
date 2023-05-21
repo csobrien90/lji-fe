@@ -1,8 +1,8 @@
 export interface LjiData {
 	blog: any
 	staff: StaffMember[]
-	newsItem: any
-	event: any
+	newsItems: NewsItem[]
+	events: Event[]
 }
 
 export interface StaffMember {
@@ -13,6 +13,25 @@ export interface StaffMember {
 	bio: string,
 	instagram: string | null,
 	website: string | null
+}
+
+export interface Event {
+	title: string,
+	venue: string,
+	address: string,
+	time: string,
+	epoch: number,
+	desc: string,
+	link: string
+}
+
+export interface NewsItem {
+	title: string,
+	body: string,
+	image: string | null,
+	imageAlt: string | null,
+	link: string | null,
+	linkText: string | null
 }
 
 export interface DonateProps {
@@ -34,3 +53,14 @@ export interface YouTubeProps {
 export interface StaffBioProps {
 	info: StaffMember,
 }
+
+export interface EventProps {
+	limit: number | null,
+	events: Event[]
+}
+
+export interface NewsProps {
+	newsItems: NewsItem[]
+}
+
+export enum formTitles { 'email', 'newsletter', 'volunteer' }

@@ -3,7 +3,7 @@ import { Buffer } from "buffer"
 
 export const fetchInitialData = async (): Promise<LjiData> => {
 	// Check if data is in sessionStorage
-	const storedData: LjiData | null = getLocalStorage()
+	const storedData: LjiData | null = getSessionStorage()
 	if (storedData) {
 		return storedData
 	}
@@ -28,17 +28,17 @@ export const fetchInitialData = async (): Promise<LjiData> => {
 		return acc
 	}, {})
 
-	setLocalStorage(categories)
+	setSessionStorage(categories)
 	return categories
 }
 
-const setLocalStorage = (object: LjiData): void => {
+const setSessionStorage = (object: LjiData): void => {
 	const encodedObject: string = Buffer.from(JSON.stringify(object)).toString('base64')
-	localStorage.setItem('lji-data', encodedObject)
+	sessionStorage.setItem('lji-data', encodedObject)
 }
 
-const getLocalStorage = (): LjiData | null => {
-	const encodedObject: string | null = localStorage.getItem('lji-data')
+const getSessionStorage = (): LjiData | null => {
+	const encodedObject: string | null = sessionStorage.getItem('lji-data')
 	if (encodedObject) {
 		const decodedObject: string = Buffer.from(encodedObject, 'base64').toString('utf-8')
 		return JSON.parse(decodedObject)
