@@ -5,6 +5,7 @@ export const fetchInitialData = async (): Promise<LjiData> => {
 	// Check if data is in sessionStorage
 	const storedData: LjiData | null = getSessionStorage()
 	if (storedData) {
+		console.log({storedData})
 		return storedData
 	}
 	

@@ -2,7 +2,12 @@ import { NewsItem, NewsProps } from "../types"
 import { Link } from 'react-router-dom'
 
 const News = ({ newsItems }: NewsProps): JSX.Element => {
-	if (newsItems.length === 0) <></>
+	if (!newsItems || newsItems.length === 0) return (
+		<section id="news">
+			<h3>News</h3>
+			<p>There are no news items at this time.</p>
+		</section>
+	)
 	if (newsItems.length > 2) newsItems.length = 2
 
 	return (

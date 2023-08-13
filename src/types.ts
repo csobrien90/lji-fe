@@ -8,11 +8,18 @@ export interface LjiData {
 export interface StaffMember {
 	name: string
 	role: string,
-	image: string,
+	image: SanityImage,
 	imageAlt: string,
 	bio: string,
 	instagram: string | null,
 	website: string | null
+}
+
+interface SanityImage {
+	asset: {
+		_ref: string,
+		_type: string
+	}
 }
 
 export interface Event {

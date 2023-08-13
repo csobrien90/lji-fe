@@ -5,7 +5,7 @@ import Copyright from "./Copyright"
 
 const Footer = () => {
 	return (
-		<footer>
+		<footer id="footer">
 			<FooterLinks />
 			<NewsletterSignup />
 			<SocialMediaLinks />

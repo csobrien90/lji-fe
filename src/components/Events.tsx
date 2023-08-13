@@ -1,6 +1,13 @@
 import { EventProps, Event } from "../types"
 
 const Events = ({ limit, events }: EventProps) => {
+	if (!events || events.length === 0) return (
+		<section id="events">
+			<h3>Events</h3>
+			<p>There are no events scheduled at this time.</p>
+		</section>
+	)
+
 	const filteredEvents: Event[] = events.sort((a: Event, b: Event): number => {
 		return a.epoch - b.epoch
 	}).filter((event: Event) => {

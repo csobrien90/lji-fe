@@ -40,7 +40,12 @@ const App = () => {
 			{
 				name: 'Chad O\'Brien',
 				role: 'Operations Manager',
-				image: 'https://unsplash.com/200x200',
+				image: {
+					asset: {
+						_ref: 'image-ref',
+						_type: 'image-type'
+					}
+				},
 				imageAlt: 'image-alt',
 				bio: 'INSERT BIO HERE',
 				instagram: 'ig.com/obrientrombone',

@@ -1,5 +1,4 @@
-const SocialMediaLinks = (props: any) => {
-	console.log(props)
+const SocialMediaLinks = (): JSX.Element => {
 	return (
 		<nav id="social-media-links"></nav>
 	)

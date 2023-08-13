@@ -1,5 +1,4 @@
-const History = (props: any) => {
-	console.log(props)
+const History = () => {
 	return (
 		<section id="history">
 			<h3>Our History</h3>
