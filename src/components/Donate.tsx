@@ -5,7 +5,7 @@ const Donate = ({ form }: DonateProps ) => {
 		case 'button':
 		case 'full':
 		case 'modal':
-			return <button id="donate">Donate</button>
+			return <button className="donate">Donate</button>
 			break;
 		default:
 			return <></>

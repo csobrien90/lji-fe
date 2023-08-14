@@ -57,7 +57,8 @@ export interface DonateProps {
 }
 
 export interface LogoProps {
-	size: 'small' | 'medium' | 'large'
+	size: 'small' | 'medium' | 'large',
+	color: string
 }
 
 export interface MissionProps {

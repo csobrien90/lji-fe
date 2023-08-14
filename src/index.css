@@ -75,9 +75,11 @@ img {
 	height: auto;
 }
 
-/* 
-main {}
+main {
+	padding: 2em;
+}
 
+/* 
 section {}
 */
 
@@ -103,14 +105,38 @@ section {}
 
 /*
 __________________
-Navigation
+Header
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 */
 
-#main-nav a {
-	font-size: 2em;
+#nav-wrapper {
+	/* Apply textured edge border image */
+	background-image: url('../public/media/edge.svg');
+	background-position: bottom;
+	padding-bottom: 1em;
 }
 
+#header {
+	display: grid;
+	gap: 2em;
+	background-color: var(--dk-purple);
+	padding: 2em;
+}
+
+#main-nav {
+	display: grid;
+}
+
+#main-nav a {
+	font-size: 2em;
+	color: var(--white);
+	padding: .5em 1em;
+}
+
+#header .donate {
+	place-self: start;
+	padding: .5em 1em;
+}
 
 
 
@@ -120,16 +146,20 @@ Logo
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 */
 
+.logo {
+	translate: -3px;
+}
+
 .logo-large {
-	max-width: 500px;
+	max-width: 400px;
 }
 
 .logo-medium {
-	max-width: 300px;
+	max-width: 200px;
 }
 
 .logo-small {
-	max-width: 150px;
+	max-width: 100px;
 }
 
 /*
