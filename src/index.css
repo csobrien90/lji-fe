@@ -199,9 +199,17 @@ Staff
 ‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
 */
 
-.staff-bio:hover, .staff-bio:focus {
+.staff-article:hover, .staff-article:focus {
 	box-shadow: 10px 10px 10px var(--black);
 	cursor: pointer;
+}
+
+.staff-article .staff-bio, .staff-article .staff-social-links {
+	display: none;
+}
+
+.staff-modal .staff-article .staff-bio, .staff-modal .staff-article .staff-social-links {
+	display: block;
 }
 
 .staff-modal {
@@ -214,13 +222,35 @@ Staff
 	left: 0;
 	background-color: rgba(0,0,0,.5);
 	border: none;
+	padding: 1.5em;
 }
 
 .staff-modal .content {
-	width: 400px;
-	height: 400px;
+	position: relative;
+	width: (300px, 600px);
+	min-height: 300px;
+	padding: 1em;
 	display: grid;
 	background-color: var(--white);
+	overflow: auto;
+}
+
+.staff-modal .close-button {
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	top: 1em;
+	right: 1em;
+	font-size: 2em;
+	color: var(--black);
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.staff-modal .close-button:hover, .staff-modal .close-button:focus {
+	color: var(--burgundy);
+	scale: 1.2;
 }
 
 
