@@ -15,7 +15,7 @@ export interface StaffMember {
 	website: string | null
 }
 
-interface SanityImage {
+export interface SanityImage {
 	asset: {
 		_ref: string,
 		_type: string

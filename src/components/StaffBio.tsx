@@ -1,4 +1,5 @@
-import { StaffBioProps } from "@/types"
+import { makeImageSrc } from "../lib/sanityUtilities"
+import { StaffBioProps } from "../types"
 import { Link } from 'react-router-dom'
 
 const StaffBio = ({info}: StaffBioProps) => {
@@ -21,13 +22,12 @@ const StaffBio = ({info}: StaffBioProps) => {
 		content.focus()
 	}
 
-	const srcArr = info.image.asset._ref.split('-')
-	const imageSrc = `${srcArr[1]}-${srcArr[2]}.${srcArr[3]}`
-	const finalImgSrc = (process.env.IMG_CDN as string) + imageSrc
+	// Build Sanity CDN image src
+	const imgSrc = makeImageSrc(info.image)
 
 	return (
 		<article className="staff-bio" onClick={(e: React.MouseEvent) => showBioModal(e)}>
-			<span className="staff-profile"><img src={finalImgSrc} alt={info.imageAlt} /></span>
+			<span className="staff-profile"><img src={imgSrc} alt={info.imageAlt} /></span>
 			<h4 className="staff-name">{info.name}</h4>
 			<p className="staff-title">{info.role}</p>
 			<p>{info.bio}</p>
