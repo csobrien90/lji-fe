@@ -1,6 +1,6 @@
-import { makeImageSrc } from "../lib/sanityUtilities"
-import { StaffBioProps } from "../types"
-import { Link } from 'react-router-dom'
+import { makeImageSrc } from "../../assets/utils/sanityUtilities"
+import { StaffBioProps } from "../../types"
+import Link from 'next/link'
 
 const StaffBio = ({info}: StaffBioProps) => {
 	
@@ -45,7 +45,7 @@ const StaffBio = ({info}: StaffBioProps) => {
 			<p className="staff-title">{info.role}</p>
 			<p className="staff-bio">{info.bio}</p>
 			{(info.instagram) && (
-				<p className="staff-social-links">Follow {info.name.split(' ')[0]} on Instagram <Link to={info.instagram}>@{info.instagram.split('/').at(-1)}</Link></p>
+				<p className="staff-social-links">Follow {info.name.split(' ')[0]} on Instagram <Link href={info.instagram}>@{info.instagram.split('/').at(-1)}</Link></p>
 			)}
 		</article>
 	)

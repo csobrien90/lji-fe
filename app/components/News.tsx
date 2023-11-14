@@ -1,5 +1,5 @@
 import { NewsItem, NewsProps } from "../types"
-import { Link } from 'react-router-dom'
+import Link from 'next/link'
 
 const News = ({ newsItems }: NewsProps): JSX.Element => {
 	if (!newsItems || newsItems.length === 0) return (
@@ -18,7 +18,7 @@ const News = ({ newsItems }: NewsProps): JSX.Element => {
 					<h4>{item.title}</h4>
 					<p>{item.body}</p>
 					{item.image && <img src={item.image} alt={item.imageAlt ?? ''} />}
-					{item.link && <Link to={item.link}>{item.linkText ?? item.link}</Link>}
+					{item.link && <Link href={item.link}>{item.linkText ?? item.link}</Link>}
 				</article>
 			))}
 		</section>

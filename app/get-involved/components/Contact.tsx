@@ -1,10 +1,12 @@
+"use client"
+
 import { useState } from "react"
 
 import EmailForm from "../components/EmailForm"
-import NewsletterSignup from "../components/NewsletterSignup"
+import NewsletterSignup from "../../components/NewsletterSignup"
 import VolunteerSignup from "../components/VolunteerSignup"
 
-import { formTitles } from "../types"
+import { formTitles } from "../../types"
 
 const Contact = (): JSX.Element => {
 	const [currentForm, setCurrentForm] = useState<keyof typeof formTitles>('email')

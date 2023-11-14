@@ -2,7 +2,17 @@
 
 This is the source code for the Louisville Jazz Initiative website. The technology stack is:
 
-* Frontend: React with TypeScript
-* CMS: Sanity.io
-* Backend: Lambda functions, Mailchimp embeds
-* Compiler and bundler: Webpack
+**Technologies:**
+
+- Next.js
+- React
+- TypeScript
+- LJI Design System
+- Sanity.io
+- AWS Lambda
+- Mailchimp
+
+
+To Do to complete Next.js conversion:
+
+- Handle data fetching (convert fetchInitialData)

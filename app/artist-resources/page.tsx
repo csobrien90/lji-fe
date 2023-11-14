@@ -1,7 +1,7 @@
-const ArtistResources = (): JSX.Element => {
+export default function ArtistResources() {
 	return (
 		<main>
-			<h2>Artist Resources</h2>
+			<h1>Artist Resources</h1>
 			{/* 
 			
 				Submit An Event
@@ -12,5 +12,3 @@ const ArtistResources = (): JSX.Element => {
 		</main>
 	)
 }
-
-export default ArtistResources

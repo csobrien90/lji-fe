@@ -1,6 +1,13 @@
-import { DonateProps } from "@/types"
+"use client"
+
+import { DonateProps } from "../types"
+
+import { usePathname } from "next/navigation"
 
 const Donate = ({ form }: DonateProps ) => {
+	const path = usePathname()
+	if (path === '/get-involved' && form !== 'full') return <></>
+
 	switch (form) {
 		case 'button':
 		case 'full':

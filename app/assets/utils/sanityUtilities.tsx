@@ -1,4 +1,4 @@
-import { SanityImage } from "../types"
+import { SanityImage } from "../../types"
 
 export const makeImageSrc = (imageObj: SanityImage): string => {
 	// Build image src

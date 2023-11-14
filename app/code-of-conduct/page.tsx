@@ -1,7 +1,7 @@
-const CodeOfConduct = () => {
+export default function CodeOfConduct() {
 	return (
 		<main>
-			<h2>Code of Conduct</h2>
+			<h1>Code of Conduct</h1>
 			<p>
 				Our community is built on a foundation of respect, inclusivity, and empathy. We welcome 
 				individuals from diverse backgrounds and strive to create an environment that is safe and 
@@ -47,5 +47,3 @@ const CodeOfConduct = () => {
 		</main>
 	)
 }
-
-export default CodeOfConduct
