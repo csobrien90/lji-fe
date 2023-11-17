@@ -9,5 +9,5 @@ export const makeImageSrc = (imageObj: SanityImage): string => {
 	imageSrc += '?w=600'
 
 	// Return image src
-	return (process.env.IMG_CDN as string) + imageSrc
+	return (process.env.NEXT_PUBLIC_IMG_CDN as string) + imageSrc
 }

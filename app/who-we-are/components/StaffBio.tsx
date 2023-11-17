@@ -3,6 +3,7 @@
 import { makeImageSrc } from "../../assets/utils/sanityUtilities"
 import { StaffBioProps } from "../../types"
 import Link from 'next/link'
+import Image from 'next/image'
 
 const StaffBio = ({info}: StaffBioProps) => {
 	
@@ -42,7 +43,9 @@ const StaffBio = ({info}: StaffBioProps) => {
 
 	return (
 		<article className="staff-article" onClick={(e: React.MouseEvent) => showBioModal(e)}>
-			<span className="staff-profile"><img src={imgSrc} alt={info.imageAlt} /></span>
+			<span className="staff-profile">
+				<Image src={imgSrc} alt={info.imageAlt} width={200} height={200} />
+			</span>
 			<h4 className="staff-name">{info.name}</h4>
 			<p className="staff-title">{info.role}</p>
 			<p className="staff-bio">{info.bio}</p>

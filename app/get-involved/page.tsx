@@ -1,7 +1,7 @@
 import Contact from "./components/Contact"
 import Events from "../components/Events"
 import Donate from "../components/Donate"
-import SlackInfo from "./components/SlackInfo"
+import SlackInfo from "../artist-resources/components/SlackInfo"
 
 import { fetchInitialData } from "../assets/fetchInitialData"
 
@@ -13,7 +13,6 @@ export default async function GetInvolved() {
 			<Contact />
 			<Events limit={null} events	={events} />
 			<Donate form={'full'} />
-			<SlackInfo />
 		</main>
 	)
 }
