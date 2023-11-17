@@ -3,10 +3,10 @@ import Events from "../components/Events"
 import Donate from "../components/Donate"
 import SlackInfo from "./components/SlackInfo"
 
-import { defaultLjiData } from "../assets/sample-data"
+import { fetchInitialData } from "../assets/fetchInitialData"
 
-export default function GetInvolved() {
-	const { events } = defaultLjiData
+export default async function GetInvolved() {
+	const { events } = await fetchInitialData()
 	return (
 		<main>
 			<h1>Get Involved</h1>

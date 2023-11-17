@@ -11,8 +11,3 @@ This is the source code for the Louisville Jazz Initiative website. The technolo
 - Sanity.io
 - AWS Lambda
 - Mailchimp
-
-
-To Do to complete Next.js conversion:
-
-- Handle data fetching (convert fetchInitialData)

@@ -2,10 +2,10 @@ import Mission from './components/Mission'
 import Events from './components/Events'
 import News from './components/News'
 
-import { defaultLjiData } from './assets/sample-data'
+import { fetchInitialData } from './assets/fetchInitialData'
 
-export default function Home() {
-	const { events, newsItems } = defaultLjiData
+export default async function Home() {
+	const { events, newsItems } = await fetchInitialData()
 
 	return (
 		<main>

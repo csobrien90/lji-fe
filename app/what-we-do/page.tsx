@@ -3,10 +3,10 @@ import Reach from "./components/Reach"
 import Media from "./components/Media"
 import Blog from "./components/Blog"
 
-import { defaultLjiData } from "../assets/sample-data"
+import { fetchInitialData } from "../assets/fetchInitialData"
 
-export default function WhatWeDo() {
-	const { blogPosts } = defaultLjiData
+export default async function WhatWeDo() {
+	const { blogPosts } = await fetchInitialData()
 	return (
 		<main>
 			<h1>What We Do</h1>

@@ -1,7 +1,10 @@
 import StaffBio from "./StaffBio"
-import { LjiData, StaffMember } from "@/types"
+import { fetchInitialData } from "../../assets/fetchInitialData"
+import { defaultLjiData } from "../../assets/sample-data"
+import { StaffMember } from "../../types"
 
-const Staff = ({ staff }: LjiData) => {
+const Staff = async () => {
+	const { staff } = await fetchInitialData()
 	return (
 		<section id="staff">
 			<h3>Staff</h3>

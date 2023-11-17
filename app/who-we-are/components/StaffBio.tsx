@@ -1,3 +1,5 @@
+"use client"
+
 import { makeImageSrc } from "../../assets/utils/sanityUtilities"
 import { StaffBioProps } from "../../types"
 import Link from 'next/link'
