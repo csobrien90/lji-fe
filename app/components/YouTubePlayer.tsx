@@ -1,4 +1,4 @@
-import { YouTubeProps } from "@/types"
+import { YouTubeProps } from "../types"
 
 const YouTubePlayer = ({ src }: YouTubeProps): JSX.Element => {
 	return (

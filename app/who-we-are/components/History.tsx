@@ -1,7 +1,7 @@
 const History = () => {
 	return (
 		<section id="history">
-			<h3>Our History</h3>
+			<h2>Our History</h2>
 			<p>[HISTORY COPY GOES HERE]</p>
 		</section>
 	)

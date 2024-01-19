@@ -46,7 +46,7 @@ const StaffBio = ({info}: StaffBioProps) => {
 			<span className="staff-profile">
 				<Image src={imgSrc} alt={info.imageAlt} width={200} height={200} />
 			</span>
-			<h4 className="staff-name">{info.name}</h4>
+			<h3 className="staff-name">{info.name}</h3>
 			<p className="staff-title">{info.role}</p>
 			<p className="staff-bio">{info.bio}</p>
 			{(info.instagram) && (

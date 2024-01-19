@@ -22,6 +22,8 @@ Imports and Variables
 	--burgundy: #b2282f;
 	--yellow: #ffb71b;
 	--orange: #fc5000;
+
+	--social-media-icon-size: 40px;
 }
 
 /*
@@ -79,9 +81,11 @@ main {
 	padding: 2em;
 }
 
-/* 
-section {}
-*/
+a {
+	display: block;
+	color: inherit;
+	font-size: initial;
+}
 
 .sr-only {
 	border: 0 !important;
@@ -160,6 +164,50 @@ Logo
 
 .logo-small {
 	max-width: 100px;
+}
+
+/*
+__________________
+Footer
+‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾‾
+*/
+
+#footer {
+	color: white;
+	background-color: var(--dk-purple);
+	padding: 1em;
+}
+
+#footer a {
+	font-size: 2em;
+}
+
+#social-media-links {
+	display: flex;
+	justify-content: start;
+	gap: 2em;
+}
+
+#social-media-links a {
+	display: grid;
+	place-content: center;
+	padding: 1em;
+	border-radius: 50%;
+	transition: all .1s ease-in-out;
+}
+
+#social-media-links a:hover, #social-media-links a:focus {
+	background-color: var(--social-media-hover);
+}
+
+#social-media-links a img {
+	width: var(--social-media-icon-size);
+	aspect-ratio: 1 / 1;
+	transition: all .2s ease-in-out;
+}
+
+#social-media-links a:hover img, #social-media-links a:focus img {
+	transform: scale(1.1);
 }
 
 /*

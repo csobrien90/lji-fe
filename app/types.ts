@@ -85,5 +85,3 @@ export interface NewsProps {
 export interface BlogProps {
 	blogPosts: BlogPost[]
 }
-
-export enum formTitles { 'email', 'newsletter', 'volunteer' }

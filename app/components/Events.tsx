@@ -3,7 +3,7 @@ import { EventProps, Event } from "../types"
 const Events = ({ limit, events }: EventProps) => {
 	if (!events || events.length === 0) return (
 		<section id="events">
-			<h3>Events</h3>
+			<h2>Events</h2>
 			<p>There are no events scheduled at this time.</p>
 		</section>
 	)
@@ -16,7 +16,7 @@ const Events = ({ limit, events }: EventProps) => {
 
 	return (
 		<section id="events">
-			<h3>Events</h3>
+			<h2>Events</h2>
 			<ul>
 				{filteredEvents.map((event: Event, index: number) => {
 					if (limit && limit <= index) return

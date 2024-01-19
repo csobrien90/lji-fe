@@ -1,7 +1,7 @@
 const Reach = () => {
   return (
 	<section id="reach">
-		<h3>Reach</h3>
+		<h2>Reach</h2>
 	</section>
   )
 }
