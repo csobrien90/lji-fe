@@ -1,0 +1,13 @@
+.coc {
+	display: grid;
+	gap: 2em;
+}
+
+.coc section {
+	display: grid;
+	gap: 1em;
+}
+
+.coc ul {
+	list-style-type: initial;
+}

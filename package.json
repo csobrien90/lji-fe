@@ -16,6 +16,7 @@
     "react-dom": "^18"
   },
   "devDependencies": {
+    "@types/auth0": "^3.3.10",
     "@types/mailchimp__mailchimp_marketing": "^3.0.17",
     "@types/node": "^20",
     "@types/react": "^18",

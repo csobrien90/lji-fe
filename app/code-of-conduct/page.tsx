@@ -1,6 +1,8 @@
+import styles from './styles/code-of-conduct.module.css'
+
 export default function CodeOfConduct() {
 	return (
-		<main>
+		<main className={styles.coc}>
 			<h1>Code of Conduct</h1>
 			<p>
 				Our community is built on a foundation of respect, inclusivity, and empathy. We welcome 

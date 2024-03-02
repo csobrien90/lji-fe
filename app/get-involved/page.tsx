@@ -10,9 +10,9 @@ export default async function GetInvolved() {
 	return (
 		<main>
 			<h1>Get Involved</h1>
-			<Contact />
 			<Events limit={null} events	={events} />
 			<Donate form={'full'} />
+			<Contact />
 		</main>
 	)
 }
