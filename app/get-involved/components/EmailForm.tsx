@@ -1,11 +1,19 @@
 "use client"
 
-import { FormEvent } from "react"
+import { FormEvent, useState } from "react"
+import Notification from "../../components/Notification"
 
 const EmailForm = (): JSX.Element => {
+	const [notification, setNotification] = useState({message: "", type: ""})
+
 	const handleSubmit = (e: FormEvent<HTMLFormElement>): void => {
 		e.preventDefault()
-		console.log(e)
+		
+		setNotification({message: "Contact form not implemented yet.", type: "warning"})
+
+		setTimeout(() => {
+			setNotification({message: "", type: ""})
+		}, 8000)
 	}
 
 	return (
@@ -25,6 +33,10 @@ const EmailForm = (): JSX.Element => {
 			</span>
 			<div className="g-recaptcha" data-sitekey="6Le7P7kdAAAAAOy6clVAp-tU2czk9WOwaeFmYDrj"></div>
 			<input type="submit" name="submit" id="email-us-submit" />
+			<Notification
+				message={notification.message}
+				type={notification.type as "success"|"warning"|"error"|"info"}
+			/>
 		</form>
 	)
 }

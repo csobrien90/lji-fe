@@ -58,7 +58,8 @@ export interface DonateProps {
 
 export interface LogoProps {
 	size: 'small' | 'medium' | 'large',
-	color: string
+	color: string,
+	isLink?: boolean
 }
 
 export interface MissionProps {
@@ -84,4 +85,9 @@ export interface NewsProps {
 
 export interface BlogProps {
 	blogPosts: BlogPost[]
+}
+
+export interface NotificationProps {
+	message: string,
+	type: 'success' | 'error' | 'info' | 'warning'
 }

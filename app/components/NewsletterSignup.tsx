@@ -1,6 +1,10 @@
 "use client"
 
+import { useState } from "react"
+import Notification from "./Notification"
+
 const NewsletterSignup = (): JSX.Element => {
+	const [notification, setNotification] = useState({message: "", type: ""})
 
 	const handleNewsletterSignup = async (e: React.FormEvent<HTMLFormElement>) => {
 		e.preventDefault()
@@ -27,24 +31,36 @@ const NewsletterSignup = (): JSX.Element => {
 
 			if (response.ok && response.status === 200) {
 				const data = await response.json()
-				console.log({data})				
-				console.log('Thank you for signing up for the newsletter!')
+
+				// If Mailchimp API returns a 200 status code, the email was successfully added
+				if (data.status !== 200) {
+					setNotification({message: 'Subscription failed. Refresh to try again or contact us for assistance.', type: 'warning'})
+					return
+				}
+
+				setNotification({message: 'Thank you for signing up for the newsletter!', type: 'success'})
 				form.reset()
-			} else {
-				console.error({response})
-				console.log('There was an error signing up for the newsletter. Please try again.')
-			}
+			} else throw new Error('Mailchimp API error')
 		} catch (error) {
-			console.error({error})
-			console.log('There was an error signing up for the newsletter. Please try again.')
-		}		
+			setNotification({message: 'A server error occured. Please refresh and try again.', type: 'error'})
+		} finally {
+			// Reset notification after it disappears
+			setTimeout(() => {
+				setNotification({message: '', type: ''})
+			}, 8000)
+		}
 	}
 	
 	return (
 		<form id="mailchimp-newsletter-form" onSubmit={handleNewsletterSignup}>
+			<p>Join the LJI mailing list to stay up to date!</p>
 			<label htmlFor="email">Email</label>
 			<input type="email" name="email" id="email" required />
 			<input type="submit" value="Sign up" />
+			<Notification
+				message={notification.message}
+				type={notification.type as "success"|"warning"|"error"|"info"}
+			/>
 		</form>
 	)
 }
