@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Hamburger from "./Hamburger";
 
-const MainNavCheckbox = () => {
+const MainNavCheckbox = () => {	
 	const [isOpen, setIsOpen] = useState(false);
 
 	const handleClick = () => toggleNav()
@@ -12,7 +13,8 @@ const MainNavCheckbox = () => {
 		const unclick = (e: Event) => {
 			if (!isOpen) return
 			const { id } = (e.target as HTMLElement);
-			if (id === 'main-nav' || id === 'main-nav-checkbox') return;
+			
+			if (['main-nav', 'main-nav-checkbox', 'main-nav-checkbox-label', 'ham-svg'].includes(id)) return;
 			toggleNav();
 		}
 		window.addEventListener('click', unclick);
@@ -20,12 +22,15 @@ const MainNavCheckbox = () => {
 	}, [isOpen])
 
 	return (
-		<input
-			type="checkbox"
-			id="main-nav-checkbox"
-			onChange={handleClick}
-			checked={isOpen}
-		/>
+		<label htmlFor="main-nav-checkbox" id="main-nav-checkbox-label">
+			<input
+				type="checkbox"
+				id="main-nav-checkbox"
+				onChange={handleClick}
+				checked={isOpen}
+			/>
+			<Hamburger />
+		</label>
 	);
 }
 

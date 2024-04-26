@@ -54,8 +54,10 @@ const NewsletterSignup = (): JSX.Element => {
 	return (
 		<form id="mailchimp-newsletter-form" onSubmit={handleNewsletterSignup}>
 			<p>Join the LJI mailing list to stay up to date!</p>
-			<label htmlFor="email">Email</label>
-			<input type="email" name="email" id="email" required />
+			<label htmlFor="email">
+				Email:
+				<input type="email" name="email" id="email" required />
+			</label>
 			<input type="submit" value="Sign up" />
 			<Notification
 				message={notification.message}
