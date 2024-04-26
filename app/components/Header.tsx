@@ -1,15 +1,15 @@
 import Navigation from './Navigation'
 import Logo from "./Logo"
-import Donate from './Donate'
+import MainNavCheckbox from "./MainNavCheckbox"
 
 const Header = () => {
   return (
 	<header id="nav-wrapper">
 		<div id='header'>
 			<h1 className="sr-only">Louisville Jazz Initiative</h1>
-			<Logo size={'large'} color='var(--white)' isLink={true} />
+			<MainNavCheckbox />
 			<Navigation />
-			{/* <Donate form={'button'} /> */}
+			<Logo size={'large'} color='var(--white)' isLink={true} />
 		</div>
 	</header>
   )

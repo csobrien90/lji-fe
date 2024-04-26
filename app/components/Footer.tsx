@@ -1,4 +1,3 @@
-import FooterLinks from "./FooterLinks"
 import NewsletterSignup from "./NewsletterSignup"
 import SocialMediaLinks from "./SocialMediaLinks"
 import Copyright from "./Copyright"
@@ -6,7 +5,6 @@ import Copyright from "./Copyright"
 const Footer = () => {
 	return (
 		<footer id="footer">
-			<FooterLinks />
 			<NewsletterSignup />
 			<SocialMediaLinks />
 			<Copyright />

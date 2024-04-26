@@ -6,6 +6,9 @@ const Navigation = () => {
 		<Link href={'/who-we-are'}>Who We Are</Link>
 		<Link href={'/what-we-do'}>What We Do</Link>
 		<Link href={'/get-involved'}>Get Involved!</Link>
+		<Link href={'/artist-resources'}>Teaching Artist Resources</Link>
+		<Link href={'/code-of-conduct'}>Code of Conduct</Link>
+		{/* <DonateButton /> */}
 	</nav>
   )
 }
