@@ -1,0 +1,40 @@
+.hamburgerSVG {
+	pointer-events: none;
+}
+
+.bars {
+	width: var(--headerHeight);
+	cursor: pointer;
+}
+
+.line {
+	fill: none;
+	stroke: #fff;
+	stroke-width: 4;
+	stroke-linecap: square;
+	transition: stroke-dasharray 400ms,  stroke-dashoffset 400ms;
+}
+
+.line.top {
+	stroke-dasharray: 40 172;
+}
+
+.line.middle {
+	stroke-dasharray: 40 111;
+}
+
+.line.bottom {
+	stroke-dasharray: 40 172;
+}
+
+:global(body:has(#main-nav-checkbox:checked)) .bars .line.top {
+	stroke-dashoffset: -132px;
+}
+
+:global(body:has(#main-nav-checkbox:checked)) .bars .line.middle {
+	stroke-dashoffset: -71px;
+}
+
+:global(body:has(#main-nav-checkbox:checked)) .bars .line.bottom {
+	stroke-dashoffset: -132px;
+}

@@ -7,16 +7,21 @@ export const fetchInitialData = async (): Promise<LjiData> => {
 	let data: Response
 	let json: any
 	try {
-		data =  await fetch((process.env.API_URL as string) + query)
+		data =  await fetch((process.env.API_URL as string) + query, {
+			cache: 'no-cache',
+		})
 		json = await data.json()
 	} catch (e) {
-		console.log('Could not fetch required site data from Sanity')
+		console.error('Could not fetch required site data from Sanity')
 		return defaultLjiData
 	}
 	
 	// Sort data by _type
 	const categories: LjiData = json.result.reduce((acc: any, item: any) => {
-		const type: string = item._type
+		let type: string = item._type
+
+		if (type === 'event') type = 'events'
+
 		if (!acc[type]) {
 			acc[type] = []
 		}

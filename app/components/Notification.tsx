@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react"
 import { NotificationProps } from "../types"
 
+import styles from "../assets/styles/Notification.module.css"
+
 const Notification = ({message, type}: NotificationProps) => {
 	// Validate props
 	if (!message || !type || !["success", "warning", "error", "info"].includes(type)) return null
@@ -19,7 +21,9 @@ const Notification = ({message, type}: NotificationProps) => {
 	}, [])
 
 	return (
-		<div className={`notification ${type} ${visible ? "" : "hidden"}`}>
+		<div className={
+		  `${styles.notification} ${styles[type]} ${visible ? "" : styles.hidden}`
+		}>
 			{message}
 		</div>
 	)

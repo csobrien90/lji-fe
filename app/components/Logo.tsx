@@ -1,8 +1,13 @@
 import { LogoProps } from "../types"
 
+import styles from "../assets/styles/Logo.module.css"
+
 const Logo = ({ size, color, isLink = false }: LogoProps): JSX.Element => {
+	
+	const sizeStyle = styles[size]
+
 	return (
-		<div className={`logo logo-${size}`}>
+		<div className={`${styles.logo} ${sizeStyle}`}>
 			{
 				isLink ? (
 					<a href="/">

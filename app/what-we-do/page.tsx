@@ -11,7 +11,7 @@ export default async function WhatWeDo() {
 			<h1>What We Do</h1>
 			<Activities />
 			<Reach />
-			<Blog blogPosts={blogPosts}/>
+			{blogPosts && blogPosts.length > 0 && <Blog blogPosts={blogPosts}/>}
 		</main>
 	)
 }

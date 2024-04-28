@@ -3,6 +3,8 @@
 import { useState } from "react"
 import Notification from "./Notification"
 
+import styles from "../assets/styles/NewsletterSignup.module.css"
+
 const NewsletterSignup = (): JSX.Element => {
 	const [notification, setNotification] = useState({message: "", type: ""})
 
@@ -52,7 +54,7 @@ const NewsletterSignup = (): JSX.Element => {
 	}
 	
 	return (
-		<form id="mailchimp-newsletter-form" onSubmit={handleNewsletterSignup}>
+		<form className={styles["mailchimp-newsletter-form"]} onSubmit={handleNewsletterSignup}>
 			<p>Join the LJI mailing list to stay up to date!</p>
 			<label htmlFor="email">
 				Email:

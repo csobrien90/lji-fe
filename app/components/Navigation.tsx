@@ -1,8 +1,10 @@
 import Link from 'next/link'
 
+import styles from "../assets/styles/Navigation.module.css"
+
 const Navigation = () => {
   return (
-	<nav id="main-nav">
+	<nav className={styles["main-nav"]}>
 		<Link href={'/who-we-are'}>Who We Are</Link>
 		<Link href={'/what-we-do'}>What We Do</Link>
 		<Link href={'/get-involved'}>Get Involved!</Link>

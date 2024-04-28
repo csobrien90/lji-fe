@@ -1,8 +1,10 @@
 import { YouTubeProps } from "../types"
 
+import styles from "../assets/styles/YouTubePlayer.module.css"
+
 const YouTubePlayer = ({ src }: YouTubeProps): JSX.Element => {
 	return (
-	<div className="youtube-iframe-wrapper"><iframe
+	<div className={styles["youtube-iframe-wrapper"]}><iframe
 		// width='100%'
 		// height='auto'
 		src={src}

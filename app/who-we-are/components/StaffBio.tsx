@@ -7,11 +7,13 @@ import Image from 'next/image'
 import Modal from '../../components/Modal'
 import { useState } from 'react'
 
+import styles from "../styles/StaffBio.module.css"
+
 const StaffBio = ({info}: StaffBioProps) => {
 	const [modalOpen, setModalOpen] = useState(false)
 
 	return (
-		<article className="staff-article" onClick={() => {setModalOpen(!modalOpen)}}>
+		<article className={styles["staff-article"]} onClick={() => {setModalOpen(!modalOpen)}}>
 			<BioContents {...info} />
 			{
 				modalOpen && (

@@ -1,0 +1,41 @@
+
+.modal {
+	display: grid;
+	place-content: center;
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgba(0,0,0,.5);
+	border: none;
+	padding: 1.5em;
+}
+
+.content {
+	position: relative;
+	width: (300px, 600px);
+	min-height: 300px;
+	padding: 1em;
+	display: grid;
+	background-color: var(--white);
+	overflow: auto;
+}
+
+.close {
+	position: absolute;
+	width: 3em;
+	height: 3em;
+	top: 1em;
+	right: 1em;
+	font-size: 2em;
+	color: var(--black);
+	background: none;
+	border: none;
+	cursor: pointer;
+}
+
+.close:hover, .close:focus {
+	color: var(--burgundy);
+	scale: 1.2;
+}

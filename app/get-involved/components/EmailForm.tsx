@@ -3,6 +3,8 @@
 import { FormEvent, useState } from "react"
 import Notification from "../../components/Notification"
 
+import styles from "../styles/EmailForm.module.css"
+
 const EmailForm = (): JSX.Element => {
 	const [notification, setNotification] = useState({message: "", type: ""})
 
@@ -17,7 +19,7 @@ const EmailForm = (): JSX.Element => {
 	}
 
 	return (
-		<form id="email-us" onSubmit={handleSubmit} >
+		<form className={styles["email-us"]} onSubmit={handleSubmit} >
 			<p>Send us an email - we'd love to hear from you!</p>
 			<span className="form-line">
 				<label htmlFor="name">Name:</label>

@@ -29,7 +29,8 @@ export interface Event {
 	time: string,
 	epoch: number,
 	desc: string,
-	link: string
+	link: string,
+	isPublic: boolean
 }
 
 export interface NewsItem {
@@ -75,8 +76,9 @@ export interface StaffBioProps {
 }
 
 export interface EventProps {
-	limit: number | null,
-	events: Event[]
+	limit?: number | null,
+	events: Event[],
+	showPrivateEvents?: boolean
 }
 
 export interface NewsProps {

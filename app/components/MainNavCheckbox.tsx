@@ -3,6 +3,8 @@
 import { useState, useEffect } from "react";
 import Hamburger from "./Hamburger";
 
+import styles from "../assets/styles/MainNavCheckbox.module.css";
+
 const MainNavCheckbox = () => {	
 	const [isOpen, setIsOpen] = useState(false);
 
@@ -13,8 +15,8 @@ const MainNavCheckbox = () => {
 		const unclick = (e: Event) => {
 			if (!isOpen) return
 			const { id } = (e.target as HTMLElement);
-			
-			if (['main-nav', 'main-nav-checkbox', 'main-nav-checkbox-label', 'ham-svg'].includes(id)) return;
+			if (['main-nav', 'main-nav-checkbox', 'main-nav-checkbox-label'].includes(id)) return;
+			console.log("unclicking", id)
 			toggleNav();
 		}
 		window.addEventListener('click', unclick);
@@ -22,10 +24,15 @@ const MainNavCheckbox = () => {
 	}, [isOpen])
 
 	return (
-		<label htmlFor="main-nav-checkbox" id="main-nav-checkbox-label">
+		<label
+			htmlFor="main-nav-checkbox"
+			id="main-nav-checkbox-label"
+			className={styles["main-nav-checkbox-label"]}
+		>
 			<input
 				type="checkbox"
 				id="main-nav-checkbox"
+				className={styles["main-nav-checkbox"]}
 				onChange={handleClick}
 				checked={isOpen}
 			/>

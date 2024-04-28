@@ -1,0 +1,14 @@
+.mailchimp-newsletter-form {
+	display: grid;
+	gap: 1em;
+}
+
+.mailchimp-newsletter-form > label {
+	display: flex;
+	align-items: center;
+	gap: 1em;
+}
+
+.mailchimp-newsletter-form input[type="email"] {
+	flex: 1;
+}

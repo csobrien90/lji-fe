@@ -1,0 +1,14 @@
+.footer {
+	display: grid;
+	grid-template-columns: 1fr auto;
+	justify-content: center;
+	gap: 1em;
+	color: white;
+	background-color: var(--dk-purple);
+	padding: 1em;
+}
+
+.footer > p {
+	grid-column: span 2;
+	text-align: center;
+}

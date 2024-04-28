@@ -1,0 +1,22 @@
+.main-nav-checkbox {
+	display: none;
+}
+
+.main-nav-checkbox-label {
+	display: grid;
+	place-content: center;
+	background-color: var(--dk-purple);
+	height: var(--headerHeight);
+	z-index: 200;
+}
+
+.main-nav-checkbox-label:hover {
+	cursor: pointer;
+}
+
+
+@media screen and (min-width: 768px) {
+	.main-nav-checkbox-label {
+		height: 120px;
+	}
+}

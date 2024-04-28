@@ -1,6 +1,7 @@
 import { EventProps, Event } from "../types"
+import Link from 'next/link'
 
-const Events = ({ limit, events }: EventProps) => {
+const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps) => {
 	if (!events || events.length === 0) return (
 		<section id="events">
 			<h2>Events</h2>
@@ -11,7 +12,13 @@ const Events = ({ limit, events }: EventProps) => {
 	const filteredEvents: Event[] = events.sort((a: Event, b: Event): number => {
 		return a.epoch - b.epoch
 	}).filter((event: Event) => {
-		return event.epoch + 360000 > Date.now()
+		// If showPrivateEvents is false, only show public events
+		const isAllowed = showPrivateEvents ? true : event.isPublic
+
+		// Only show events that are in the future
+		const isFuture = event.epoch + 360000 > Date.now()
+
+		return isAllowed && isFuture
 	})
 
 	return (
@@ -30,6 +37,7 @@ const Events = ({ limit, events }: EventProps) => {
 					)
 				})}
 			</ul>
+			{limit && filteredEvents.length > limit && <Link href="/get-involved">See All Events</Link>}
 		</section>
 	)
 }

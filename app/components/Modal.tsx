@@ -2,6 +2,8 @@
 
 import { SyntheticEvent } from "react"
 
+import styles from "../assets/styles/Modal.module.css"
+
 const Modal = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
 	const clickOffCloseModal = (e: React.MouseEvent) => {
 		if (e.target && e.target instanceof HTMLDialogElement) e.target.close()
@@ -17,14 +19,14 @@ const Modal = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
 	}
 
 	return (
-		<dialog className="modal" onClick={clickOffCloseModal}>
+		<dialog className={styles.modal} onClick={clickOffCloseModal}>
 			<button
-				className="close-button"
+				className={styles.close}
 				aria-label="Close"
 				title="Close"
 				onClick={closeButtonCloseModal}
 			>&#66338;</button>
-			<div className="content" onLoad={focusContent}>
+			<div className={styles.content} onLoad={focusContent}>
 				{
 					Array.isArray(children)
 						? children.map((child, i) => <div key={i}>{child}</div>)

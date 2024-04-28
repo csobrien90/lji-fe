@@ -1,0 +1,34 @@
+.notification {
+	display: grid;
+	place-content: center;
+	padding: 1em;
+	font-size: 2em;
+	color: black;
+	border-radius: 5px;
+	position: fixed;
+	top: 20px;
+	right: 20px;
+	margin-left: 20px;
+	transition: right .3s cubic-bezier(0.2, -0.3, 0.2, 1.3);
+}
+
+.notification.success {
+	background-color: var(--lime);
+}
+
+.notification.error {
+	background-color: var(--burgundy);
+	color: white;
+}
+
+.notification.warning {
+	background-color: var(--yellow);
+}
+
+.notification.info {
+	background-color: var(--lt-purple);
+}
+
+.notification.hidden {
+	right: -200vw;
+}

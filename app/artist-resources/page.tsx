@@ -1,6 +1,8 @@
 import SlackInfo from './components/SlackInfo'
 import Profile from './components/Profile'
 import { getSession } from '@auth0/nextjs-auth0';
+import { fetchInitialData } from '../assets/fetchInitialData';
+import Events from '../components/Events';
 
 export default async function ArtistResources() {
 	const session = await getSession();
@@ -18,6 +20,8 @@ export default async function ArtistResources() {
 		)
 	}
 
+	const { events } = await fetchInitialData();
+
 	const adminEmails = [
 		'obrien.music@gmail.com',
 		'louisvillejazzinitiative@gmail.com'
@@ -34,6 +38,9 @@ export default async function ArtistResources() {
 				user && user.email && adminEmails.includes(user.email) && (
 					<a href={cmsUrl} target='_blank'>Manage Content</a>
 				)
+			}
+			{
+				events && events.length > 0 && <Events events={events} showPrivateEvents={true} />
 			}
 			{/* 
 				<SlackInfo />

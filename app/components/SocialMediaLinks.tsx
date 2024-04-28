@@ -4,9 +4,11 @@ import Image from 'next/image'
 import facebookIcon from '../assets/images/facebookicon.png'
 import instagramIcon from '../assets/images/instagramicon.png'
 
+import styles from '../assets/styles/SocialMediaLinks.module.css'
+
 const SocialMediaLinks = (): JSX.Element => {
 	return (
-		<nav id="social-media-links">
+		<nav className={styles["social-media-links"]}>
 			<Link
 				href="https://www.facebook.com/Louisville-Jazz-Initiative-103098041901352"
 				target="_blank"

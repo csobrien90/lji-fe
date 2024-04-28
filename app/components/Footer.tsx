@@ -2,9 +2,11 @@ import NewsletterSignup from "./NewsletterSignup"
 import SocialMediaLinks from "./SocialMediaLinks"
 import Copyright from "./Copyright"
 
+import styles from "../assets/styles/Footer.module.css"
+
 const Footer = () => {
 	return (
-		<footer id="footer">
+		<footer className={styles.footer}>
 			<NewsletterSignup />
 			<SocialMediaLinks />
 			<Copyright />

@@ -1,0 +1,40 @@
+.social-media-links {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	gap: .5em;
+	--social-media-icon-size: 40px;
+}
+
+.social-media-links a {
+	display: grid;
+	width: 60px;
+	height: 60px;
+	place-content: center;
+	padding: 1em;
+	border-radius: 50%;
+	transition: all .1s ease-in-out;
+	z-index: 200;
+}
+
+.social-media-links a:hover, .social-media-links a:focus {
+	background-color: var(--social-media-hover);
+}
+
+.social-media-links a img {
+	width: var(--social-media-icon-size);
+	aspect-ratio: 1 / 1;
+	transition: all .2s ease-in-out;
+}
+
+.social-media-links a:hover img, .social-media-links a:focus img {
+	transform: scale(1.1);
+}
+
+
+@media screen and (min-width: 768px) {
+	.social-media-links a {
+		width: 80px;
+		height: 80px;
+	}
+}
