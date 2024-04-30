@@ -9,7 +9,10 @@ import { useState } from 'react'
 
 import styles from "../styles/StaffBio.module.css"
 
+import translate from "@/app/hooks/translation"
+
 const StaffBio = ({info}: StaffBioProps) => {
+	const { t } = translate()
 	const [modalOpen, setModalOpen] = useState(false)
 
 	return (
@@ -22,7 +25,7 @@ const StaffBio = ({info}: StaffBioProps) => {
 						<p className="staff-bio">{info.bio}</p>
 						<p className="staff-title">{info.role}</p>
 						{(info.instagram) ? (
-							<p className="staff-social-links">Follow {info.name.split(' ')[0]} on Instagram <Link href={info.instagram}>@{info.instagram.split('/').at(-1)}</Link></p>
+							<p className="staff-social-links">{t("instagramCTA", {firstName: info.name.split(' ')[0]})} <Link href={info.instagram}>@{info.instagram.split('/').at(-1)}</Link></p>
 						) : <></>}
 					</Modal>
 				)

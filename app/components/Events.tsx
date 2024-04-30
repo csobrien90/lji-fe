@@ -1,11 +1,15 @@
 import { EventProps, Event } from "../types"
 import Link from 'next/link'
 
+import translate from "@/app/hooks/translation"
+
 const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps) => {
+	const { t } = translate()
+
 	if (!events || events.length === 0) return (
 		<section id="events">
-			<h2>Events</h2>
-			<p>There are no events scheduled at this time.</p>
+			<h2>{t("eventsTitle")}</h2>
+			<p>{t("noEvents")}</p>
 		</section>
 	)
 
@@ -23,7 +27,7 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 
 	return (
 		<section id="events">
-			<h2>Events</h2>
+			<h2>{t("eventsTitle")}</h2>
 			<ul>
 				{filteredEvents.map((event: Event, index: number) => {
 					if (limit && limit <= index) return
@@ -37,7 +41,7 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 					)
 				})}
 			</ul>
-			{limit && filteredEvents.length > limit && <Link href="/get-involved">See All Events</Link>}
+			{limit && filteredEvents.length > limit && <Link href="/get-involved">{t("seeAllEvents")}</Link>}
 		</section>
 	)
 }

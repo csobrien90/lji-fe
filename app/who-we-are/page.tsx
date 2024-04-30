@@ -4,10 +4,13 @@ import Staff from './components/Staff'
 import History from './components/History'
 import PressKit from './components/PressKit'
 
+import translate from '../hooks/translation'
+
 export default function WhoWeAre() {
+	const { t } = translate()
 	return (
 		<main>
-			<h1>Who We Are</h1>
+			<h1>{t("whoLink")}</h1>
 			<Mission layout='quote' />
 			<Vision />
 			<Staff />
