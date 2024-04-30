@@ -1,0 +1,9 @@
+.staffSection {
+	display: grid;
+}
+
+.staffSection > div {
+	display: grid;
+	justify-items: center;
+	gap: 4em;
+}

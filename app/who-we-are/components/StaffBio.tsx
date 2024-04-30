@@ -22,10 +22,14 @@ const StaffBio = ({info}: StaffBioProps) => {
 				modalOpen && (
 					<Modal>
 						<BioContents {...info} />
-						<p className="staff-bio">{info.bio}</p>
-						<p className="staff-title">{info.role}</p>
+						<p>{info.bio}</p>
 						{(info.instagram) ? (
-							<p className="staff-social-links">{t("instagramCTA", {firstName: info.name.split(' ')[0]})} <Link href={info.instagram}>@{info.instagram.split('/').at(-1)}</Link></p>
+							<p className={styles.instaCTA}>
+								{t("instagramCTA", {firstName: info.name.split(' ')[0]})} 
+								<Link href={info.instagram} target="_blank">
+									@{info.instagram.split('/').at(-1)}
+								</Link>
+							</p>
 						) : <></>}
 					</Modal>
 				)
@@ -36,16 +40,17 @@ const StaffBio = ({info}: StaffBioProps) => {
 
 export default StaffBio
 
-const BioContents = ({name, image, imageAlt}: {name: string, image: SanityImage, imageAlt: string}) => {
+const BioContents = ({name, role, image, imageAlt}: {name: string, role: string, image: SanityImage, imageAlt: string}) => {
 	// Build Sanity CDN image src
 	const imgSrc = makeImageSrc(image)
 
 	return (
 		<>
-			<span className="staff-profile">
+			<span className={styles.imageWrapper}>
 				<Image src={imgSrc} alt={imageAlt} width={200} height={200} />
 			</span>
-			<h3 className="staff-name">{name}</h3>
+			<h3>{name}</h3>
+			<p className={styles.role}>{role}</p>
 		</>
 	)
 }

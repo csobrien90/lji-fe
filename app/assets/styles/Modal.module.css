@@ -14,28 +14,41 @@
 
 .content {
 	position: relative;
-	width: (300px, 600px);
 	min-height: 300px;
-	padding: 1em;
+	padding: 1.5em;
+	gap: 1em;
 	display: grid;
 	background-color: var(--white);
-	overflow: auto;
+	overflow: hidden auto;
+	-ms-overflow-style: none;  /* IE and Edge */
+	scrollbar-width: none;  /* Firefox */
+}
+
+.content::-webkit-scrollbar {
+	display: none;
 }
 
 .close {
 	position: absolute;
 	width: 3em;
 	height: 3em;
-	top: 1em;
-	right: 1em;
-	font-size: 2em;
-	color: var(--black);
+	top: .5em;
+	right: .5em;
+	font-size: var(--font-size-lg);
+	font-weight: bold;
+	scale: 1.2;
+	color: var(--white);
 	background: none;
 	border: none;
 	cursor: pointer;
+	z-index: 999;
+	text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+	box-shadow: none;
+	transition: all 0.1s ease-in-out;
 }
 
 .close:hover, .close:focus {
-	color: var(--burgundy);
-	scale: 1.2;
+	scale: 1.3;
+	text-shadow: 2px 2px 3px rgba(0,0,0,1);
+	box-shadow: none;
 }

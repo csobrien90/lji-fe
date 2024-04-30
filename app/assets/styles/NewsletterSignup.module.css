@@ -1,14 +1,33 @@
+.mcWrapper {
+  display: grid;
+  justify-items: stretch;
+  position: relative;
+}
+
 .mailchimp-newsletter-form {
 	display: grid;
+	grid-template-columns: 1fr auto;
 	gap: 1em;
+	justify-items: flex-start;
+	transition: filter 0.1s;
+}
+
+.mcWrapper:has(div[data-id="spinner"]) .mailchimp-newsletter-form {
+  filter: blur(2px);
+}
+
+.mailchimp-newsletter-form > p {
+	font-size: var(--font-size-sm);
+	grid-column: span 2;
 }
 
 .mailchimp-newsletter-form > label {
-	display: flex;
+	display: grid;
 	align-items: center;
-	gap: 1em;
+	gap: .5em;
+	width: 100%;
 }
 
 .mailchimp-newsletter-form input[type="email"] {
-	flex: 1;
+	width: 100%;
 }

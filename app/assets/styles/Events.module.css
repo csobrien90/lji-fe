@@ -1,0 +1,21 @@
+.events > ul {
+	list-style-type: none;
+	padding: 0;
+	display: grid;
+	gap: 1em;
+}
+
+.events > ul > li {
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: var(--font-size-md);
+}
+
+.events > ul > li > h3 {
+	font-size: var(--font-size-lg);
+}
+
+.events > a {
+	margin: 1em 0 0 0;
+}

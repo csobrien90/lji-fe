@@ -16,7 +16,6 @@ const MainNavCheckbox = () => {
 			if (!isOpen) return
 			const { id } = (e.target as HTMLElement);
 			if (['main-nav', 'main-nav-checkbox', 'main-nav-checkbox-label'].includes(id)) return;
-			console.log("unclicking", id)
 			toggleNav();
 		}
 		window.addEventListener('click', unclick);

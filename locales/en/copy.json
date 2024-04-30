@@ -33,9 +33,10 @@
 	"vision": "Our vision is to create a vibrant and inclusive jazz community in Louisville that celebrates the rich history of the art form while also embracing new and innovative approaches to jazz music. We believe that jazz has the power to bring people together, inspire creativity, and foster a sense of belonging and connection. We are committed to creating a space where jazz musicians of all ages and backgrounds can come together to learn, collaborate, and share their love of music with the world.",
 	"staffTitle": "Staff",
 	"instagramCTA": "Follow {{firstName}} on Instagram",
-	"notifications": {
-		"newsletterFail": "Subscription failed. Refresh to try again or contact us for assistance.",
-		"newsletterSuccess": "Thank you for signing up for the newsletter!",
-		"newsletterServerError": "A server error occured. Please refresh and try again."
-	}
+	"pressKitTitle": "Promo Materials",
+	"pressKit": "Our Press Kit is a collection of assets that you can use to promote our company. It includes our logo, photos, and other materials that you can use in your articles, blog posts, and social media posts.",
+	"pressKitLink": "Download Press Kit",
+	"newsletterFail": "Subscription failed. Refresh to try again or contact us for assistance.",
+	"newsletterSuccess": "Thank you for signing up for the newsletter!",
+	"newsletterServerError": "A server error occured. Please refresh and try again."
 }

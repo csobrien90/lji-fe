@@ -1,4 +1,28 @@
+.staff-article {
+	display: grid;
+	justify-items: center;
+	width: 100%;
+}
+
 .staff-article:hover, .staff-article:focus {
 	box-shadow: 10px 10px 10px var(--black);
 	cursor: pointer;
+}
+
+.staff-article span:has(img) {
+	width: 100%;
+}
+
+.staff-article img {
+	width: 100%;
+	height: auto;
+	margin-bottom: .5em;
+}
+
+.instaCTA a {
+	display: inline-block;
+}
+
+.role {
+	font-size: var(--font-size-lg);
 }

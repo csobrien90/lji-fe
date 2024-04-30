@@ -3,11 +3,13 @@ import Link from 'next/link'
 
 import translate from "@/app/hooks/translation"
 
+import styles from "../assets/styles/Events.module.css"
+
 const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps) => {
 	const { t } = translate()
 
 	if (!events || events.length === 0) return (
-		<section id="events">
+		<section className={styles.events}>
 			<h2>{t("eventsTitle")}</h2>
 			<p>{t("noEvents")}</p>
 		</section>
@@ -26,23 +28,27 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 	})
 
 	return (
-		<section id="events">
+		<section className={styles.events}>
 			<h2>{t("eventsTitle")}</h2>
 			<ul>
 				{filteredEvents.map((event: Event, index: number) => {
 					if (limit && limit <= index) return
-					return (
-						<li key={index}>
-							<h4>{event.title}</h4>
-							<p>{event.time}</p>
-							<p>{event.venue} - {event.address}</p>
-							<p>{event.desc}</p>
-						</li>
-					)
+					return <Event key={index} event={event} />
 				})}
 			</ul>
 			{limit && filteredEvents.length > limit && <Link href="/get-involved">{t("seeAllEvents")}</Link>}
 		</section>
+	)
+}
+
+const Event = ({ event }: { event: Event }) => {
+	return (
+		<li>
+			<h3>{event.title}</h3>
+			<p>{event.time}</p>
+			<p>{event.venue} - {event.address}</p>
+			<p>{event.desc}</p>
+		</li>
 	)
 }
 

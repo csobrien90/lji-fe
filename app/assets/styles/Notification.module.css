@@ -2,7 +2,7 @@
 	display: grid;
 	place-content: center;
 	padding: 1em;
-	font-size: 2em;
+	font-size: var(--font-size-md);
 	color: black;
 	border-radius: 5px;
 	position: fixed;

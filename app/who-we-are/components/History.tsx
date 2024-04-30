@@ -4,7 +4,7 @@ const History = () => {
 	const { t } = translate()
 
 	return (
-		<section id="history">
+		<section>
 			<h2>{t("historyTitle")}</h2>
 			<p>{t("history")}</p>
 		</section>

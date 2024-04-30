@@ -22,6 +22,14 @@ Imports and Variables
 	--burgundy: #b2282f;
 	--yellow: #ffb71b;
 	--orange: #fc5000;
+
+	--base-font-size: 8px;
+	--font-size-sm: calc(var(--base-font-size) * 1.5);
+	--font-size-md: calc(var(--base-font-size) * 2);
+	--font-size-lg: calc(var(--base-font-size) * 2.5);
+	--font-size-xl: calc(var(--base-font-size) * 3);
+	--font-size-xxl: calc(var(--base-font-size) * 3.75);
+	--font-size-xxxl: calc(var(--base-font-size) * 5);
 }
 
 /*
@@ -50,27 +58,28 @@ body {
 }
 
 h1 {
-	font-size: 6em;
+	font-size: var(--font-size-xxxl);
 }
 
 h2 {
-	font-size: 4em;
+	font-size: var(--font-size-xxl);
+	margin: 5px 0;
 }
 
 h3 {
-	font-size: 3em;
+	font-size: var(--font-size-xl);
 }
 
 h4 {
-	font-size: 2em;
+	font-size: var(--font-size-lg);
 }
 
 h5 {
-	font-size: 1.6em;
+	font-size: var(--font-size-md);
 }
 
 p, label, ul {
-	font-size: 1.6em;
+	font-size: var(--font-size-md);
 }
 
 img {
@@ -80,12 +89,35 @@ img {
 
 main {
 	padding: 2em;
+	display: grid;
+	gap: 1em;
 }
 
 a {
 	display: block;
 	color: inherit;
 	font-size: initial;
+}
+
+main > a, section > a, section > nav > a {
+	font-size: var(--font-size-lg);
+}
+
+button, input[type="submit"] {
+	background-color: var(--yellow);
+	border: none;
+	padding: .5em 1em;
+	border-radius: 5px;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+
+button:hover, input[type="submit"]:hover {
+	cursor: pointer;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
+}
+
+input, textarea {
+	padding: .5em;
 }
 
 .sr-only {
@@ -116,20 +148,20 @@ Media queries
 */
 
 @media screen and (min-width: 500px) {
-	body {
-		font-size: 10px;
+	:root {
+		--base-font-size: 12px;
 	}
 }
 
 @media screen and (min-width: 768px) {
-	body {
-		font-size: 12px;
+	:root {
+		--base-font-size: 16px;
 	}
 }
 
 @media screen and (min-width: 1040px) {
-	body {
-		font-size: 14px;
+	:root {
+		--base-font-size: 20px;
 	}
 }
 

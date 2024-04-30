@@ -2,10 +2,10 @@
 	display: grid;
 	grid-template-columns: 1fr auto;
 	justify-content: center;
-	gap: 1em;
+	gap: 2em;
 	color: white;
 	background-color: var(--dk-purple);
-	padding: 1em;
+	padding: 1em 2em;
 }
 
 .footer > p {

@@ -16,12 +16,20 @@
 
 :global(body:has(#main-nav-checkbox:checked)) .main-nav {
 	left: 0;
+	display: grid;
+	justify-content: stretch;
 }
 
 .main-nav a {
-	font-size: 2em;
+	font-size: var(--font-size-lg);
+	width: 100%;
 	color: var(--white);
-	padding: .5em 1em;
+	padding: .75em 1em;
+	text-decoration: none;
+}
+
+.main-nav a:not(:last-child) {
+	border-bottom: 1px solid var(--white);
 }
 
 @media screen and (min-width: 500px) {
