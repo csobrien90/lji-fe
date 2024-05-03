@@ -3,6 +3,15 @@ export interface LjiData {
 	staff: StaffMember[]
 	newsItems: NewsItem[]
 	events: Event[]
+	grants: Grant[]
+}
+
+export interface Grant {
+	title: string,
+	description: string,
+	deadline: string,
+	url: string,
+	tags: string[]
 }
 
 export interface StaffMember {
@@ -36,7 +45,7 @@ export interface Event {
 export interface NewsItem {
 	title: string,
 	body: string,
-	image: string | null,
+	image: SanityImage | null,
 	imageAlt: string | null,
 	link: string | null,
 	linkText: string | null

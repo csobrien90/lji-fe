@@ -38,5 +38,8 @@
 	"pressKitLink": "Download Press Kit",
 	"newsletterFail": "Subscription failed. Refresh to try again or contact us for assistance.",
 	"newsletterSuccess": "Thank you for signing up for the newsletter!",
-	"newsletterServerError": "A server error occured. Please refresh and try again."
+	"newsletterServerError": "A server error occured. Please refresh and try again.",
+	"grantTitle": "Grants and Opportunities",
+	"grantDeadline": "Deadline: {{formattedDate}} at {{formattedTime}}",
+	"moreInfo": "More Info"
 }

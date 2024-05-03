@@ -3,7 +3,7 @@ import { defaultLjiData } from './sample-data'
 
 export const fetchInitialData = async (): Promise<LjiData> => {	
 	// Fetch data from Sanity
-	const query: string = encodeURIComponent('*[_type in ["blog", "event", "staff", "newsItem"]]')
+	const query: string = encodeURIComponent('*[_type in ["blog", "event", "staff", "newsItem", "grant"]]')
 	let data: Response
 	let json: any
 	try {
@@ -21,6 +21,8 @@ export const fetchInitialData = async (): Promise<LjiData> => {
 		let type: string = item._type
 
 		if (type === 'event') type = 'events'
+		if (type === 'newsItem') type = 'newsItems'
+		if (type === 'grant') type = 'grants'
 
 		if (!acc[type]) {
 			acc[type] = []
