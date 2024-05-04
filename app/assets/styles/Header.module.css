@@ -1,20 +1,30 @@
 .header {
-	position: sticky;
-	top: 0;
+	--headerHeight: 80px;
 }
 
 .nav-wrapper {
 	display: grid;
 	gap: 2em;
 	grid-template-columns: auto auto;
-	background-color: rgba(0,0,0,.5);
 	align-items: center;
 	justify-content: flex-start;
-	--headerHeight: 80px;
+}
+
+:global(body:has(.openDelay)) .nav-wrapper {
+	position: fixed;
+	top: 0;
+}
+
+.spacer {
+	height: 0;
+}
+
+:global(body:has(.openDelay)) .spacer {
+	height: var(--headerHeight);
 }
 
 @media screen and (min-width: 500px) {
-	.nav-wrapper {
+	.header {
 		--headerHeight: 100px;
 	}
 }

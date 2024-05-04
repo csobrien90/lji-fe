@@ -6,16 +6,16 @@ import Grants from './components/Grants';
 import ResourceLinks from './components/ResourceLinks';
 
 import translate from '../hooks/translation';
+import { hasAccount, getRoles } from './accounts';
 
 export default async function ArtistResources() {
-	const session = await getSession();
-	const user = session?.user;
-
 	const { t } = translate();
 
-	const isLoggedIn = user ? true : false;
+	// Get the user and session
+	const session = await getSession();
+	let user = session?.user;
 
-	if (!isLoggedIn) {
+	if (!user || !user?.email) {
 		return (
 			<main>
 				<h1>{t("artistResourcesTitle")}</h1>
@@ -24,6 +24,24 @@ export default async function ArtistResources() {
 		)
 	}
 
+	// Check if the user has an account
+	const userAccountExists = hasAccount(user.email);
+
+	if (!userAccountExists) {
+		return (
+			<main>
+				<h1>{t("artistResourcesTitle")}</h1>
+				<p>{t("forbidden")}</p>
+				<a href="/api/auth/logout">{t("logout")}</a>
+			</main>
+		)
+	}
+
+	// Get the user's roles
+	const roles = getRoles(user.email);
+	const isTeachingArtist = roles.includes("teaching-artist");
+
+	// Fetch the initial data
 	const { events, grants } = await fetchInitialData();
 	
 	return (
@@ -32,8 +50,8 @@ export default async function ArtistResources() {
 			<a href="/api/auth/logout">{t("logout")}</a>
 			<Profile user={user} />
 			{events && events.length > 0 && <Events events={events} showPrivateEvents={true} />}
-			{grants && grants.length > 0 && <Grants grants={grants} />}
-			<ResourceLinks user={user} />
+			{isTeachingArtist && grants && grants.length > 0 && <Grants grants={grants} />}
+			<ResourceLinks user={user} roles={roles} />
 			{/* 
 
 				New Tools to build:

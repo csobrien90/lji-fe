@@ -21,7 +21,8 @@ export interface StaffMember {
 	imageAlt: string,
 	bio: string,
 	instagram: string | null,
-	website: string | null
+	website: string | null,
+	sortPriority: number
 }
 
 export interface SanityImage {

@@ -11,7 +11,7 @@ export default async function Home() {
 		<main>
 			<h1 className='sr-only'>Home</h1>
 			<Mission layout='feature' />
-			<Events limit={1} events={events} />
+			<Events limit={3} events={events} />
 			<News newsItems={newsItems} />
 		</main>
 	)

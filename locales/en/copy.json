@@ -41,5 +41,7 @@
 	"newsletterServerError": "A server error occured. Please refresh and try again.",
 	"grantTitle": "Grants and Opportunities",
 	"grantDeadline": "Deadline: {{formattedDate}} at {{formattedTime}}",
-	"moreInfo": "More Info"
+	"moreInfo": "More Info",
+	"contactFormError": "An error occurred. Please try again or email us directly at louisvillejazzinitiative@gmail.com.",
+	"forbidden": "You do not have permission to access this page."
 }

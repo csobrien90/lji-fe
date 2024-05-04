@@ -38,5 +38,6 @@
 		left: -480px;
 		margin-left: -30px;
 		padding: calc(var(--headerHeight) * 1.5) 20px 100px 40px;
+		box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
 	}
 }

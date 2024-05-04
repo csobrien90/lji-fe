@@ -7,9 +7,14 @@ import styles from "../assets/styles/MainNavCheckbox.module.css";
 
 const MainNavCheckbox = () => {	
 	const [isOpen, setIsOpen] = useState(false);
+	const [delayClass, setDelayClass] = useState("");
 
 	const handleClick = () => toggleNav()
-	const toggleNav = () => setIsOpen(!isOpen)
+	const toggleNav = () => {
+		if (isOpen) setDelayClass("")
+	else setTimeout(() => setDelayClass("openDelay"), 100);
+		setIsOpen(!isOpen)
+	}
 
 	useEffect(() => {
 		const unclick = (e: Event) => {
@@ -26,7 +31,7 @@ const MainNavCheckbox = () => {
 		<label
 			htmlFor="main-nav-checkbox"
 			id="main-nav-checkbox-label"
-			className={styles["main-nav-checkbox-label"]}
+			className={`${styles["main-nav-checkbox-label"]} ${delayClass}`}
 		>
 			<input
 				type="checkbox"

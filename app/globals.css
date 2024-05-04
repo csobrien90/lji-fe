@@ -57,6 +57,10 @@ body {
 	line-height: 1.5;
 }
 
+body:has(.openDelay) {
+	--headerLogoColor: var(--white);
+}
+
 h1 {
 	font-size: var(--font-size-xxxl);
 }
@@ -88,9 +92,10 @@ img {
 }
 
 main {
-	padding: 2em;
 	display: grid;
+	align-content: flex-start;
 	gap: 1em;
+	padding: 2em;
 }
 
 a {

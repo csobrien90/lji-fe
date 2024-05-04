@@ -9,13 +9,22 @@ import translate from "@/app/hooks/translation"
 const Staff = async () => {
 	const { t } = translate()
 	const { staff } = await fetchInitialData()
+
+	const hasAllInfo = (staffMember: StaffMember) => {
+		return staffMember.name && staffMember.role && staffMember.bio && staffMember.image
+	}
 	return (
 		<section className={styles.staffSection}>
 			<h2>{t("staffTitle")}</h2>
 			<div>
-				{staff && staff.map((staffMember: StaffMember, index: number) => (
-					<StaffBio info={staffMember} key={index}/>
-				))}
+				{
+					staff && staff
+						.filter(a => hasAllInfo(a))
+						.sort((a,b) => a.sortPriority - b.sortPriority)
+						.map((staffMember: StaffMember, index: number) => (
+							<StaffBio info={staffMember} key={index}/>
+						))
+				}
 			</div>
 		</section>
 	)

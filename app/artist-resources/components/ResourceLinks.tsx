@@ -2,20 +2,15 @@ import { Fragment } from 'react'
 import Link from 'next/link'
 
 import translate from '@/app/hooks/translation'
+import { Permission } from '../accounts'
 
-export default async function ResourceLinks({ user }: { user: any }) {
+export default async function ResourceLinks({ user, roles }: { user: any, roles: Permission[] }) {
 	const { t } = translate()
 	const resources = []
 
-	// If the user is an admin, show a link to the CMS
-	const adminEmails = [
-		'louisvillejazzinitiative@gmail.com',
-		'obrien.music@gmail.com',
-		'kianadelmusic@gmail.com'
-	]
-
+	// Add a link to the CMS if the user is an admin
 	const cmsUrl = "https://louisville-jazz-initiative.sanity.studio/"
-	if (adminEmails.includes(user.email))
+	if (roles.includes("admin"))
 		resources.push(<Link href={cmsUrl}>{t("cmsLinkText")}</Link>)
 	
 	return (

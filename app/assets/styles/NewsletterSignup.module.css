@@ -2,6 +2,7 @@
   display: grid;
   justify-items: stretch;
   position: relative;
+  z-index: 200;
 }
 
 .mailchimp-newsletter-form {
