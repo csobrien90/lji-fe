@@ -40,4 +40,21 @@
 		padding: calc(var(--headerHeight) * 1.5) 20px 100px 40px;
 		box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.5);
 	}
+
+	.main-nav a {
+		font-size: var(--font-size-md);
+	}
+}
+
+@media screen and (min-width: 768px) {
+	.main-nav a {
+		font-size: var(--font-size-sm);
+	}
+	
+}
+
+@media screen and (min-width: 1000px) {
+	.main-nav a {
+		font-size: var(--font-size-sm);
+	}
 }

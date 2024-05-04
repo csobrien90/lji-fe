@@ -3,6 +3,7 @@
   justify-items: stretch;
   position: relative;
   z-index: 200;
+  padding: 2em 1em;
 }
 
 .mailchimp-newsletter-form {

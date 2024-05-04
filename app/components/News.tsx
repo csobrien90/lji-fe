@@ -1,8 +1,11 @@
 import { NewsItem, NewsProps } from "../types"
 import Link from 'next/link'
 import { makeImageSrc } from "../assets/utils/sanityUtilities"
+import { getPexelsImage } from "../assets/utils/pexelsUtilities"
 
 import translate from "@/app/hooks/translation"
+
+import styles from "../assets/styles/News.module.css"
 
 const News = ({ newsItems }: NewsProps): JSX.Element => {
 	const { t } = translate()
@@ -15,16 +18,29 @@ const News = ({ newsItems }: NewsProps): JSX.Element => {
 	)
 	if (newsItems.length > 2) newsItems.length = 2
 
+	// PEXELS_API_KEY
 	return (
-		<section id="news">
+		<section className={styles["news-section"]}>
 			<h2>{t("newsTitle")}</h2>
-			{newsItems.map((item: NewsItem, index: number) => {
+			{newsItems.map(async (item: NewsItem, index: number) => {
+				let imageSrc
+				let imageAlt = item.imageAlt ?? ''
+				if (item.image) {
+					imageSrc = makeImageSrc(item.image)
+				} else {
+					const {src, alt} = await getPexelsImage("Jazz music")
+					imageSrc = src
+					imageAlt = alt
+				}
+
 				return (
 					<article key={index}>
-						<h3>{item.title}</h3>
-						<p>{item.body}</p>
-						{item.image && <img src={makeImageSrc(item.image)} alt={item.imageAlt ?? ''} />}
-						{item.link && <Link href={item.link}>{item.linkText ?? item.link}</Link>}
+						<div>
+							<h3>{item.title}</h3>
+							<p>{item.body}</p>
+							{item.link && <Link href={item.link}>{item.linkText ?? item.link}</Link>}
+						</div>
+						<img src={imageSrc} alt={imageAlt} />
 					</article>
 				)
 			})}

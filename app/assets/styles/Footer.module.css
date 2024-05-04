@@ -23,10 +23,44 @@
 .footer > p {
 	grid-column: span 2;
 	text-align: center;
+	font-size: var(--font-size-xs);
 }
 
 @media screen and (min-width: 500px) {
 	:global(body:has(#main-nav-checkbox:checked)) .footer {
 		position: static;
+	}
+
+	.footer {
+		grid-template-columns: minmax(200px, 500px) minmax(auto, 500px);
+		justify-content: space-between;
+		gap: 1em 2em;
+	}
+
+	.footer > div {
+		justify-self: flex-start;
+	}
+
+	.footer > nav {
+		justify-self: center;
+	}
+}
+
+@media screen and (min-width: 1200px) {
+	.footer {
+		grid-template-columns: 35% 1fr 1fr 35%;
+		align-items: flex-end;
+	}
+
+	.footer > div {
+		order: 1;
+	}
+
+	.footer > p {
+		order: 2;
+	}
+
+	.footer > nav {
+		order: 3;
 	}
 }
