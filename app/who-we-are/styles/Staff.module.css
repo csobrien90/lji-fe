@@ -7,3 +7,10 @@
 	justify-items: center;
 	gap: 4em;
 }
+
+@media screen and (min-width: 500px) {
+	.staffSection > div {
+		grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+		gap: 8em;
+	}
+}

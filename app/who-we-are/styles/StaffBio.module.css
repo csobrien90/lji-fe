@@ -1,5 +1,6 @@
 .staff-article {
 	display: grid;
+	grid-template-rows: auto auto 1fr;
 	justify-items: center;
 	width: 100%;
 }
@@ -15,8 +16,9 @@
 
 .staff-article img {
 	width: 100%;
-	height: auto;
+	aspect-ratio: 1/1;
 	margin-bottom: .5em;
+	object-fit: cover;
 }
 
 .instaCTA a {

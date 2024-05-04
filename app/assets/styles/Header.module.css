@@ -20,7 +20,7 @@
 }
 
 :global(body:has(.openDelay)) .spacer {
-	height: var(--headerHeight);
+	height: calc(var(--headerHeight) + 20px);
 }
 
 @media screen and (min-width: 500px) {

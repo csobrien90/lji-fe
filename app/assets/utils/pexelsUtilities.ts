@@ -9,7 +9,16 @@ export const getPexelsImage = async (searchTerm: string): Promise<{ src: string,
 		const data = await res.json()
 
 		// Get a random photo from the search results
-		const photo = data.photos[Math.floor(Math.random() * data.photos.length)]
+		const photo = data.photos.filter(photo => {
+			// Filter out photos by bad photographers
+			const badPhotographerIds = [
+				320794
+			]
+
+			if (badPhotographerIds.includes(photo.photographer_id)) return false
+
+			return true
+		})[Math.floor(Math.random() * data.photos.length)]
 	
 		// Return the src and alt text 
 		return {
