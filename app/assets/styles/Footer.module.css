@@ -49,7 +49,7 @@
 @media screen and (min-width: 1200px) {
 	.footer {
 		grid-template-columns: 35% 1fr 1fr 35%;
-		align-items: flex-end;
+		align-items: center;
 	}
 
 	.footer > div {
@@ -58,6 +58,7 @@
 
 	.footer > p {
 		order: 2;
+		align-self: flex-end;
 	}
 
 	.footer > nav {

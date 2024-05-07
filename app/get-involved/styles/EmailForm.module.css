@@ -6,9 +6,12 @@
 
 .form-wrapper {
 	display: grid;
-	gap: 1em;
+	gap: 2em;
 	justify-items: flex-start;
 	transition: filter 0.1s;
+}
+
+:global(body:has(#main-nav-checkbox:checked)) .form-wrapper {
 	z-index: -1;
 }
 

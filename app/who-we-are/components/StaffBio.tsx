@@ -22,15 +22,18 @@ const StaffBio = ({info}: StaffBioProps) => {
 				modalOpen && (
 					<Modal>
 						<BioContents {...info} />
-						<p>{info.bio}</p>
-						{(info.instagram) ? (
-							<p className={styles.instaCTA}>
-								{t("instagramCTA", {firstName: info.name.split(' ')[0]})} 
-								<Link href={info.instagram} target="_blank">
-									@{info.instagram.split('/').at(-1)}
-								</Link>
-							</p>
-						) : <></>}
+						<div className={styles["modal-bio"]}>
+							<p>{info.bio}</p>
+							{(info.instagram) ? (
+								<p className={styles.instaCTA}>
+									{t("instagramCTA", {firstName: info.name.split(' ')[0]})}
+									&nbsp;
+									<Link href={info.instagram} target="_blank">
+										@{info.instagram.split('/').at(-1)}
+									</Link>
+								</p>
+							) : <></>}
+						</div>
 					</Modal>
 				)
 			}
@@ -46,11 +49,13 @@ const BioContents = ({name, role, image, imageAlt}: {name: string, role: string,
 
 	return (
 		<>
-			<span className={styles.imageWrapper}>
+			<div className={styles.imageWrapper}>
 				<Image src={imgSrc} alt={imageAlt} width={200} height={200} />
-			</span>
-			<h3>{name}</h3>
-			<p className={styles.role}>{role}</p>
+			</div>
+			<div>
+				<h3>{name}</h3>
+				<p className={styles.role}>{role}</p>
+			</div>
 		</>
 	)
 }

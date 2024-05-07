@@ -1,3 +1,7 @@
+"use client"
+
+import { useState } from "react"
+
 const TextInput = ({ type, label, slug, required, addClasses = [] }: {
 	type: "text" | "email" | "password" | "textarea",
 	label: string,
@@ -6,35 +10,43 @@ const TextInput = ({ type, label, slug, required, addClasses = [] }: {
 	addClasses?: string[]
 }) => {
 	let classes = [slug, ...addClasses];
-	
-	let inputElement = null;
-	switch (type) {
-		case "textarea":
-			inputElement = (
-				<textarea
-					id={slug}
-					className={classes.join(' ')}
-					placeholder={`Enter your ${label.toLocaleLowerCase()}`}
-					required={required}
-				/>
-			);
-			break;
-		default:
-			inputElement = (
-				<input
-					type={type}
-					id={slug}
-					className={classes.join(' ')}
-					placeholder={label}
-					required={required}
-				/>
-			);
-	}
+	slug = slug.toLowerCase();
+
+	const [value, setValue] = useState("");
+
+	const handleInput = (e: React.FormEvent<HTMLInputElement> | React.FormEvent<HTMLTextAreaElement>) => {
+		setValue(e.currentTarget.value);
+	};
 
 	return (
-		<label>
+		<label
+			htmlFor={slug}
+		>
 			<span className="sr-only">{label}</span>
-			{inputElement}
+			{
+				type === "textarea" ? (
+					<textarea
+						id={slug}
+						name={slug}
+						className={classes.join(' ')}
+						placeholder={`Enter your ${label.toLocaleLowerCase()}`}
+						required={required}
+						value={value}
+						onChange={e => handleInput(e)}
+					/>
+				) : (
+					<input
+						type={type}
+						id={slug}
+						name={slug}
+						className={classes.join(' ')}
+						placeholder={label}
+						required={required}
+						value={value}
+						onChange={e => handleInput(e)}
+					/>
+				)
+			}
 		</label>
 	);
 }

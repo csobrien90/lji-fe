@@ -70,7 +70,7 @@ const NewsletterSignup = (): JSX.Element => {
 		<div className={styles.mcWrapper}>
 			<form className={styles["mailchimp-newsletter-form"]} onSubmit={handleNewsletterSignup}>	
 				<p>{t("newsletterCTA")}</p>
-				<TextInput type="email" label={`${t("emailLabel")}:`} slug={`${t("emailLabel")}:`} required={true} />
+				<TextInput type="email" label={`${t("newsletterLabel")}`} slug={`${t("newsletterLabel")}`} required={true} />
 				<input type="submit" value="Sign up" />
 			</form>
 			{isLoading && <Spinner />}

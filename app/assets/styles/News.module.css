@@ -1,10 +1,10 @@
 .news-section {
 	display: grid;
-	margin: 0 -2em;
+	margin: 0 -6em -6em;
 }
 
 .news-section h2 {
-	padding-left: 16px;
+	padding-left: 48px;
 }
 
 .news-section article {
@@ -35,11 +35,11 @@
 	.news-section article > div {
 		display: grid;
 		place-content: center;
-		padding: 4em 8em;
+		padding: 4em 12em;
 	}
 
 	.news-section article:nth-of-type(2n + 1) > img {
-		order: -1;
+		order: 2;
 	}
 
 	.news-section article > div p {

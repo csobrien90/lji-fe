@@ -47,7 +47,6 @@ export default async function ArtistResources() {
 	return (
 		<main>
 			<h1>{t("artistResourcesTitle")}</h1>
-			<a href="/api/auth/logout">{t("logout")}</a>
 			<Profile user={user} />
 			{events && events.length > 0 && <Events events={events} showPrivateEvents={true} />}
 			{isTeachingArtist && grants && grants.length > 0 && <Grants grants={grants} />}

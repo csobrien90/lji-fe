@@ -9,7 +9,7 @@ export const getPexelsImage = async (searchTerm: string): Promise<{ src: string,
 		const data = await res.json()
 
 		// Get a random photo from the search results
-		const photo = data.photos.filter(photo => {
+		const photo = data.photos.filter((photo: any) => {
 			// Filter out photos by bad photographers
 			const badPhotographerIds = [
 				320794

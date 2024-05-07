@@ -35,12 +35,12 @@ const News = ({ newsItems }: NewsProps): JSX.Element => {
 
 				return (
 					<article key={index}>
+						<img src={imageSrc} alt={imageAlt} />
 						<div>
 							<h3>{item.title}</h3>
 							<p>{item.body}</p>
 							{item.link && <Link href={item.link}>{item.linkText ?? item.link}</Link>}
 						</div>
-						<img src={imageSrc} alt={imageAlt} />
 					</article>
 				)
 			})}

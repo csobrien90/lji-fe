@@ -6,16 +6,18 @@ import { fetchInitialData } from "../assets/fetchInitialData"
 
 import translate from "../hooks/translation"
 
+import styles from "./styles/GetInvolved.module.css"
+
 export default async function GetInvolved() {
 	const { t } = translate()
 	const { events } = await fetchInitialData()
 	return (
 		<>
-			<main>
+			<main className={styles.main}>
 				<h1>{t("getInvolvedLink")}</h1>
+				<Contact />
 				<Events events={events} />
 				{/* <Donate form={'full'} /> */}
-				<Contact />
 			</main>
 		</>
 	)

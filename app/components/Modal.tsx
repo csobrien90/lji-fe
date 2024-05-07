@@ -1,10 +1,10 @@
 "use client"
 
-import { SyntheticEvent, use } from "react"
+import { MouseEventHandler, SyntheticEvent, use } from "react"
 
 import styles from "../assets/styles/Modal.module.css"
 
-const Modal = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
+const Modal = ({ children, customClose }: { children: JSX.Element | JSX.Element[], customClose?: Function }) => {
 	const clickOffCloseModal = (e: React.SyntheticEvent) => {
 		const target = e.target as HTMLElement
 		const tag = target.tagName.toLowerCase()
@@ -30,7 +30,7 @@ const Modal = ({ children }: { children: JSX.Element | JSX.Element[] }) => {
 					className={styles.close}
 					aria-label="Close"
 					title="Close"
-					onClick={closeButtonCloseModal}
+					onClick={(customClose as MouseEventHandler<HTMLButtonElement>) || closeButtonCloseModal}
 				>&#66338;</button>
 				{
 					Array.isArray(children)

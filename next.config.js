@@ -1,7 +1,7 @@
 const nextTranslate = require('next-translate-plugin')
 
 const nextConfig = nextTranslate({
-	reactStrictMode: true,
+	reactStrictMode: false,
 	images: {
 		domains: ['cdn.sanity.io'],
 	},
