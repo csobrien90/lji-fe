@@ -1,6 +1,6 @@
 import { LogoProps } from "../types"
-
 import styles from "../assets/styles/Logo.module.css"
+import Link from "next/link"
 
 const Logo = ({ size, color, isLink = false }: LogoProps): JSX.Element => {
 	
@@ -10,9 +10,9 @@ const Logo = ({ size, color, isLink = false }: LogoProps): JSX.Element => {
 		<div className={`${styles.logo} ${sizeStyle}`}>
 			{
 				isLink ? (
-					<a href="/">
+					<Link href="/" title="Home">
 						<LogoSvg color={color} />
-					</a>
+					</Link>
 				) : (
 					<LogoSvg color={color} />
 				)

@@ -1,4 +1,5 @@
 import translate from "@/app/hooks/translation"
+import Link from "next/link"
 
 const PressKit = (): JSX.Element => {
 	const { t } = translate()
@@ -6,7 +7,7 @@ const PressKit = (): JSX.Element => {
 		<section>
 			<h2>{t("pressKitTitle")}</h2>
 			<p>{t("pressKit")}</p>
-			<a href="/press-kit.zip">{t("pressKitLink")}</a>
+			<Link href="/press-kit.zip">{t("pressKitLink")}</Link>
 		</section>
 	)
 }

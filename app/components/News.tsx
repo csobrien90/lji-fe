@@ -16,6 +16,13 @@ const News = ({ newsItems }: NewsProps): JSX.Element => {
 			<p>{t("noNews")}</p>
 		</section>
 	)
+
+	// Sort the news items by date
+	newsItems.sort((a, b) => {
+		const dateA = new Date(a._updatedAt).getTime()
+		const dateB = new Date(b._updatedAt).getTime()
+		return dateB - dateA
+	})
 	if (newsItems.length > 2) newsItems.length = 2
 
 	// PEXELS_API_KEY

@@ -49,7 +49,9 @@ export interface NewsItem {
 	image: SanityImage | null,
 	imageAlt: string | null,
 	link: string | null,
-	linkText: string | null
+	linkText: string | null,
+	_updatedAt: string
+	_createdAt: string
 }
 
 export interface BlogPost {

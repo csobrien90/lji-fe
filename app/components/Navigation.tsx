@@ -1,7 +1,7 @@
+"use client";
+
 import Link from 'next/link'
-
 import styles from "../assets/styles/Navigation.module.css"
-
 import translate from "@/app/hooks/translation"
 
 const Navigation = () => {

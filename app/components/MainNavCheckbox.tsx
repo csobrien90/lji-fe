@@ -11,9 +11,13 @@ const MainNavCheckbox = () => {
 
 	const handleClick = () => toggleNav()
 	const toggleNav = () => {
-		if (isOpen) setDelayClass("")
-	else setTimeout(() => setDelayClass("openDelay"), 100);
+		// Toggle the nav
 		setIsOpen(!isOpen)
+
+		// Set the delay class
+		setTimeout(() => {
+			setDelayClass(isOpen ? "closeDelay" : "openDelay")
+		}, 100);
 	}
 
 	useEffect(() => {
@@ -32,6 +36,13 @@ const MainNavCheckbox = () => {
 			htmlFor="main-nav-checkbox"
 			id="main-nav-checkbox-label"
 			className={`${styles["main-nav-checkbox-label"]} ${delayClass}`}
+			tabIndex={0}
+			onKeyDown={(e) => {
+				if (e.key === "Enter" || e.key === " ") {
+					e.preventDefault()
+					toggleNav()
+				}
+			}}
 		>
 			<input
 				type="checkbox"

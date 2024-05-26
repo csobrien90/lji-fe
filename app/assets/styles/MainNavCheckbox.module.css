@@ -14,6 +14,10 @@
 	cursor: pointer;
 }
 
+.main-nav-checkbox-label:hover svg path, .main-nav-checkbox-label:focus svg path{
+	stroke: var(--yellow);
+}
+
 
 @media screen and (min-width: 768px) {
 	.main-nav-checkbox-label {

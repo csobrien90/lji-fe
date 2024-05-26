@@ -7,6 +7,7 @@ import ResourceLinks from './components/ResourceLinks';
 
 import translate from '../hooks/translation';
 import { hasAccount, getRoles } from './accounts';
+import Link from 'next/link';
 
 export default async function ArtistResources() {
 	const { t } = translate();
@@ -19,7 +20,7 @@ export default async function ArtistResources() {
 		return (
 			<main>
 				<h1>{t("artistResourcesTitle")}</h1>
-				<a href="/api/auth/login">{t("login")}</a>
+				<Link href="/api/auth/login">{t("login")}</Link>
 			</main>
 		)
 	}
@@ -32,7 +33,7 @@ export default async function ArtistResources() {
 			<main>
 				<h1>{t("artistResourcesTitle")}</h1>
 				<p>{t("forbidden")}</p>
-				<a href="/api/auth/logout">{t("logout")}</a>
+				<Link href="/api/auth/logout">{t("logout")}</Link>
 			</main>
 		)
 	}

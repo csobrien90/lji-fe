@@ -1,4 +1,5 @@
 import { EventProps, Event } from "../types"
+import { isInTheFuture } from "../assets/utils/time"
 import Link from 'next/link'
 
 import translate from "@/app/hooks/translation"
@@ -22,7 +23,7 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 		const isAllowed = showPrivateEvents ? true : event.isPublic
 
 		// Only show events that are in the future
-		const isFuture = event.epoch + 360000 > Date.now()
+		const isFuture = isInTheFuture(event.epoch)
 
 		return isAllowed && isFuture
 	})

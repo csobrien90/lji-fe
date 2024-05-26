@@ -11,7 +11,7 @@
 	transition: filter 0.1s;
 }
 
-:global(body:has(#main-nav-checkbox:checked)) .form-wrapper {
+:global(body:has(#main-nav-checkbox:checked)) .email-us {
 	z-index: -1;
 }
 

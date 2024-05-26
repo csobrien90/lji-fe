@@ -110,6 +110,11 @@ main > a, section > a, section > nav > a {
 	font-size: var(--font-size-lg);
 }
 
+main a:hover, main a:focus {
+	font-weight: bold;
+}
+
+
 button, input[type="submit"] {
 	background-color: var(--yellow);
 	border: none;
@@ -118,7 +123,8 @@ button, input[type="submit"] {
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
 }
 
-button:hover, input[type="submit"]:hover {
+button:hover, input[type="submit"]:hover,
+button:focus, input[type="submit"]:focus {
 	cursor: pointer;
 	box-shadow: 1px 1px 5px rgba(0, 0, 0, .8);
 }

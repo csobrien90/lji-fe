@@ -11,7 +11,7 @@ export default async function ResourceLinks({ user, roles }: { user: any, roles:
 	// Add a link to the CMS if the user is an admin
 	const cmsUrl = "https://louisville-jazz-initiative.sanity.studio/"
 	if (roles.includes("admin"))
-		resources.push(<Link href={cmsUrl}>{t("cmsLinkText")}</Link>)
+		resources.push(<Link href={cmsUrl} target='_blank'>{t("cmsLinkText")}</Link>)
 	
 	return (
 		<section>

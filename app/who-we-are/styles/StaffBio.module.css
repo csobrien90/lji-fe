@@ -54,6 +54,10 @@
 		place-items: center;
 	}
 
+	.staff-article img {
+		max-width: 400px;
+	}
+
 	.staff-article > div:first-of-type {
 		padding: 2em 2em 0;
 	}
