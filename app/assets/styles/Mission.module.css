@@ -1,6 +1,6 @@
 .feature {
 	position: relative;
-	height: 105vh;
+	height: 115vh;
 	overflow-y: clip;
 	z-index: -1;
 	margin-top: calc(var(--headerHeight) * -1);
@@ -9,9 +9,9 @@
 }
 
 .feature img {
-	margin: 0 -6em;
+	margin: 0 -2em;
+	width: calc(100% + 4em);
 	max-width: unset;
-	width: calc(100% + 12em);
 	height: 100%;
 	object-fit: cover;
 }
@@ -20,14 +20,14 @@
 	position: absolute;
 	top: 0;
 	left: 0;
-	width: calc(100% + 12em);
+	width: calc(100% + 4em);
 	height: 100%;
 	display: grid;
 	place-content: center;
 	background-color: rgba(0, 0, 0, 0.6);
 	color: white;
 	padding: 4rem;
-	margin: 0 -6em;
+	margin: 0 -2em;
 }
 
 @media screen and (min-width: 500px) {
@@ -35,18 +35,36 @@
 		--headerHeight: 160px;
 	}
 
+	.feature img {
+		margin: 0 -4em;
+		width: calc(100% + 8em);
+	}
+
 	.feature .mission-card {
+		margin: 0 -4em;
+		width: calc(100% + 8em);
 		padding: 6rem;
 	}
 }
 
 @media screen and (min-width: 768px) {
+	.feature img {
+		margin: 0 -6em;
+		width: calc(100% + 12em);
+	}
+
 	.feature .mission-card {
+		margin: 0 -6em;
+		width: calc(100% + 12em);
 		padding: 8rem;
 	}
 }
 
 @media screen and (min-width: 1024px) {
+	.feature {
+		height: 105vh;
+	}
+
 	.feature .mission-card {
 		padding: 10rem;
 	}	

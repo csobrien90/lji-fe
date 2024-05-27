@@ -1,3 +1,4 @@
+import SingleEvent from "./SingleEvent"
 import { EventProps, Event } from "../types"
 import { isInTheFuture } from "../assets/utils/time"
 import Link from 'next/link'
@@ -34,22 +35,11 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 			<ul>
 				{filteredEvents.map((event: Event, index: number) => {
 					if (limit && limit <= index) return
-					return <Event key={index} event={event} />
+					return <SingleEvent key={index} event={event} />
 				})}
 			</ul>
 			{limit && filteredEvents.length > limit && <Link href="/get-involved">{t("seeAllEvents")}</Link>}
 		</section>
-	)
-}
-
-const Event = ({ event }: { event: Event }) => {
-	return (
-		<li>
-			<h3>{event.title}</h3>
-			<p>{event.time}</p>
-			<p>{event.venue} - {event.address}</p>
-			<p>{event.desc}</p>
-		</li>
 	)
 }
 

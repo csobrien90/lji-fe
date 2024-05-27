@@ -1,0 +1,30 @@
+.event {
+	padding: 1em;
+	border: 1px solid black;
+	border-radius: 5px;
+	font-size: var(--font-size-md);
+	display: grid;
+	gap: 1em;
+}
+
+.event:hover {
+	cursor: pointer;
+	box-shadow: 1px 1px 5px rgba(0, 0, 0, .5);
+}
+
+.event > h3 {
+	font-size: var(--font-size-lg);
+}
+
+.desc {
+	overflow: hidden;
+	transition: max-height 0.2s;
+}
+
+.open-desc {
+	max-height: 100%;
+}
+
+.closed-desc {
+	max-height: 0;
+}

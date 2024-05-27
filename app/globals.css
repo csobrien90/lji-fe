@@ -96,8 +96,12 @@ img {
 main {
 	display: grid;
 	align-content: flex-start;
-	gap: 1em;
-	padding: 2em;
+	padding: 0 2em;
+}
+
+section {
+	display: grid;
+	margin: 2em 0;
 }
 
 a {
@@ -114,7 +118,6 @@ main > a, section > a, section > nav > a {
 main a:hover, main a:focus {
 	font-weight: bold;
 }
-
 
 button, input[type="submit"] {
 	background-color: var(--yellow);
@@ -178,7 +181,4 @@ Media queries
 	:root {
 		--base-font-size: 14px;
 	}
-}
-
-@media screen and (min-width: 1440px) {
 }

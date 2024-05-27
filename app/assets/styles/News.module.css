@@ -1,10 +1,11 @@
 .news-section {
 	display: grid;
 	margin: 0 -2em -1em;
+	padding: 2em 0;
 }
 
 .news-section h2 {
-	padding-left: 48px;
+	padding-left: 16px;
 }
 
 .news-section article {
@@ -28,6 +29,12 @@
 		margin: 0 -6em -6em;
 	}
 
+	.news-section h2 {
+		padding-left: 48px;
+	}
+}
+
+@media (min-width: 1200px) {
 	.news-section article {
 		grid-template-columns: 50% 50%;
 		height: 500px;
@@ -39,6 +46,7 @@
 	}
 
 	.news-section article > div {
+		padding: 2em 6em;
 		place-content: center;
 	}
 
@@ -48,15 +56,5 @@
 
 	.news-section article > div p {
 		font-size: var(--font-size-xs);
-	}
-}
-
-@media (min-width: 1200px) {
-	.news-section {
-		margin: 0 -6em -4em;
-	}
-
-	.news-section article > div {
-		padding: 2em 6em;
 	}
 }
