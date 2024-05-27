@@ -40,7 +40,6 @@
 .main-nav a:hover, .main-nav a:focus {
 	color: var(--yellow);
 	text-decoration: underline;
-	text-underline-offset: 4px;
 }
 
 @media screen and (min-width: 500px) {

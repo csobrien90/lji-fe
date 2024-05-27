@@ -8,6 +8,9 @@
 	--headerLogoColor: var(--yellow);
 }
 
+:global(body:has(#mission-feature)) .logo {
+	--headerLogoColor: var(--white);
+}
 
 @media screen and (min-width: 500px) {
 	.logo {

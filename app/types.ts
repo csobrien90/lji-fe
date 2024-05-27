@@ -105,3 +105,17 @@ export interface NotificationProps {
 	message: string,
 	type: 'success' | 'error' | 'info' | 'warning'
 }
+
+export interface Picture {
+	_updatedAt: string,
+	imageAlt: string,
+	imageCredit: string,
+	image: SanityImage,
+	_id: string,
+	imageCreditLink: string,
+	caption: string,
+	title: string,
+	_createdAt: string,
+	_rev: string,
+	_type: 'img'
+}
