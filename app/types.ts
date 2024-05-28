@@ -38,7 +38,7 @@ export interface Event {
 	address: string,
 	time: string,
 	epoch: number,
-	desc: string,
+	desc?: string,
 	link: string,
 	isPublic: boolean
 }

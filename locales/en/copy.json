@@ -44,5 +44,6 @@
 	"grantDeadline": "Deadline: {{formattedDate}} at {{formattedTime}}",
 	"moreInfo": "More Info",
 	"contactFormError": "An error occurred. Please try again or email us directly at louisvillejazzinitiative@gmail.com.",
-	"forbidden": "You do not have permission to access this page."
+	"forbidden": "You do not have permission to access this page.",
+	"reachCopy": "We know quality is what really matters in community engagement. But here are the numbers anyway!"
 }
