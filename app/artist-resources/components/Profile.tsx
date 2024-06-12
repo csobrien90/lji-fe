@@ -7,10 +7,10 @@ import styles from "../styles/Profile.module.css"
 
 export default function Profile({ user }: { user: any }) {
 	const [isExpanded, setIsExpanded] = useState(false)
+	const { t } = useTranslate()
 
 	if (!user) return null
 
-	const { t } = useTranslate()
 
 	const handleExpand = () => {
 		setIsExpanded(!isExpanded)
