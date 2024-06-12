@@ -1,18 +1,16 @@
 "use client"
 
 import { useState } from "react"
-
 import Modal from "@/app/components/Modal"
-
-import translate from "@/app/hooks/translation"
-
+import useTranslate from "@/app/hooks/translation"
 import styles from "../styles/Profile.module.css"
 
 export default function Profile({ user }: { user: any }) {
+	const [isExpanded, setIsExpanded] = useState(false)
+
 	if (!user) return null
 
-	const { t } = translate()
-	const [isExpanded, setIsExpanded] = useState(false)
+	const { t } = useTranslate()
 
 	const handleExpand = () => {
 		setIsExpanded(!isExpanded)

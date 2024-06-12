@@ -4,10 +4,10 @@ import Staff from './components/Staff'
 import History from './components/History'
 import PressKit from './components/PressKit'
 
-import translate from '../hooks/translation'
+import useTranslate from '../hooks/translation'
 
 export default function WhoWeAre() {
-	const { t } = translate()
+	const { t } = useTranslate()
 	return (
 		<main>
 			<h1>{t("whoLink")}</h1>

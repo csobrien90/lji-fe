@@ -4,12 +4,12 @@ import Donate from "../components/Donate"
 
 import { fetchInitialData } from "../assets/fetchInitialData"
 
-import translate from "../hooks/translation"
+import useTranslate from "../hooks/translation"
 
 import styles from "./styles/GetInvolved.module.css"
 
 export default async function GetInvolved() {
-	const { t } = translate()
+	const { t } = useTranslate()
 	const { events } = await fetchInitialData()
 	return (
 		<>

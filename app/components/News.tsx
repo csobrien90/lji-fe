@@ -3,12 +3,12 @@ import Link from 'next/link'
 import { makeImageSrc } from "../assets/utils/sanityUtilities"
 import { getPexelsImage } from "../assets/utils/pexelsUtilities"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 import styles from "../assets/styles/News.module.css"
 
 const News = ({ newsItems }: NewsProps): JSX.Element => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	if (!newsItems || newsItems.length === 0) return (
 		<section id="news">

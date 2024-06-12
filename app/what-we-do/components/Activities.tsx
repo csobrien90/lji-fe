@@ -1,7 +1,7 @@
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 const Activities = (props: any) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	console.log(props)
 	return (
 		<section>

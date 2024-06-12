@@ -1,7 +1,7 @@
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 const Vision = (): JSX.Element => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	return (
 		<section>
 			<h2>{t("visionTitle")}</h2>

@@ -4,12 +4,12 @@ import Blog from "./components/Blog"
 
 import { fetchInitialData } from "../assets/fetchInitialData"
 
-import translate from "../hooks/translation"
+import useTranslate from "../hooks/translation"
 
 import styles from "./styles/WhatWeDo.module.css"
 
 export default async function WhatWeDo() {
-	const { t } = translate()
+	const { t } = useTranslate()
 	const { blogPosts } = await fetchInitialData()
 	return (
 		<main className={styles["what-we-do"]}>

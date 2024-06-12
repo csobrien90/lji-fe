@@ -29,7 +29,7 @@ const MainNavCheckbox = () => {
 		}
 		window.addEventListener('click', unclick);
 		return () => window.removeEventListener('click', unclick);
-	}, [isOpen])
+	}, [isOpen, toggleNav])
 
 	return (
 		<label

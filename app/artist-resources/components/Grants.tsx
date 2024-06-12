@@ -1,13 +1,13 @@
 import { isInTheFuture } from '@/app/assets/utils/time'
 import { Grant } from '../../types'
-import translate from '@/app/hooks/translation'
+import useTranslate from '@/app/hooks/translation'
 import Link from 'next/link'
 import Card from '@/app/components/Card'
 
 import styles from '../styles/Grants.module.css'
 
 const Grants = ({ grants }: { grants: Grant[] }) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	const filteredAndSortedGrants = grants.filter(g => {
 		const epoch = new Date(g.deadline).getTime()
@@ -37,7 +37,7 @@ const Grants = ({ grants }: { grants: Grant[] }) => {
 }
 
 const GrantHeader = ({ grant }: { grant: Grant }) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	const formatDateTime = (dateString: string) => {
 		const deadline = new Date(dateString)
@@ -66,7 +66,7 @@ const GrantHeader = ({ grant }: { grant: Grant }) => {
 }
 
 const GrantBody = ({ grant }: { grant: Grant }) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	return (
 		<>

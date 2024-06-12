@@ -2,13 +2,13 @@ import { EventProps, Event } from "../types"
 import { isInTheFuture } from "../assets/utils/time"
 import Link from 'next/link'
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 import styles from "../assets/styles/Events.module.css"
 import Card from "./Card"
 
 const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	const filteredEvents: Event[] = events.sort((a: Event, b: Event): number => {
 		return a.epoch - b.epoch

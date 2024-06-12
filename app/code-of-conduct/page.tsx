@@ -24,7 +24,7 @@ export default function CodeOfConduct() {
 			</section>
 			<section>
 				<h3>Unacceptable Behavior</h3>
-				<p>We do not tolerate any behavior that violates our community's values, including but not limited to:</p>
+				<p>We do not tolerate any behavior that violates our community&apos;s values, including but not limited to:</p>
 				<ul>
 					<li>Harassment or discrimination based on any protected characteristic, including but not limited to age, gender identity and expression, sexual orientation, disability, personal appearance, body size, race, ethnicity, religion, nationality, or any other characteristic</li>
 					<li>Hate speech, offensive language, or derogatory remarks</li>

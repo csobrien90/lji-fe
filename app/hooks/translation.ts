@@ -1,5 +1,5 @@
 import useTranslation from 'next-translate/useTranslation'
 
-export default function translate() {
+export default function useTranslate() {
   return useTranslation("copy")
 }

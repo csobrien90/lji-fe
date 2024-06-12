@@ -4,10 +4,10 @@ import { StaffMember } from "../../types"
 
 import styles from "../styles/Staff.module.css"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 const Staff = async () => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	const { staff } = await fetchInitialData()
 
 	const hasAllInfo = (staffMember: StaffMember) => {

@@ -6,9 +6,6 @@ import { NotificationProps } from "../types"
 import styles from "../assets/styles/Notification.module.css"
 
 const Notification = ({message, type}: NotificationProps) => {
-	// Validate props
-	if (!message || !type || !["success", "warning", "error", "info"].includes(type)) return null
-	
 	const [visible, setVisible] = useState(false)
 
 	useEffect(() => {
@@ -18,7 +15,10 @@ const Notification = ({message, type}: NotificationProps) => {
 		}, 5000)
 
 		return () => clearTimeout(timer)
-	}, [])
+	}, [setVisible])
+
+	// Validate props
+	if (!message || !type || !["success", "warning", "error", "info"].includes(type)) return null
 
 	return (
 		<div className={

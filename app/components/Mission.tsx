@@ -1,5 +1,5 @@
 import { MissionProps } from "../types"
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 import { fetchImage } from "../assets/fetchInitialData"
 import { makeImageSrc } from "../assets/utils/sanityUtilities"
 import defaultMissionImage from "@/app/assets/images/lji-promo1.jpeg"
@@ -7,7 +7,7 @@ import defaultMissionImage from "@/app/assets/images/lji-promo1.jpeg"
 import styles from "../assets/styles/Mission.module.css"
 
 const Mission = async ({ layout }: MissionProps) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	// Fetch an image from Sanity
 	let finalImageSrc, finalImageAlt

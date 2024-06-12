@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 
-import translate from '../hooks/translation'
+import useTranslate from '../hooks/translation'
 
 import facebookIcon from '../assets/images/facebookicon.png'
 import instagramIcon from '../assets/images/instagramicon.png'
@@ -9,7 +9,7 @@ import instagramIcon from '../assets/images/instagramicon.png'
 import styles from '../assets/styles/SocialMediaLinks.module.css'
 
 const SocialMediaLinks = (): JSX.Element => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	return (
 		<nav className={styles["social-media-links"]}>
 			<header><p>{t('socialMediaCTA')}</p></header>

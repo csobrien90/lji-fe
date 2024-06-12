@@ -9,10 +9,10 @@ import { useState } from 'react'
 
 import styles from "../styles/StaffBio.module.css"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 const StaffBio = ({info}: StaffBioProps) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	const [modalOpen, setModalOpen] = useState(false)
 
 	return (

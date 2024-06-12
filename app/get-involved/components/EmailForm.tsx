@@ -5,7 +5,7 @@ import Notification from "../../components/Notification"
 
 import styles from "../styles/EmailForm.module.css"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 import TextInput from "@/app/components/TextInput"
 import Spinner from "@/app/components/Spinner"
 
@@ -19,7 +19,7 @@ interface LambdaPayload {
 
 const EmailForm = (): JSX.Element => {
 	const { executeRecaptcha } = useReCaptcha();
-	const { t } = translate()
+	const { t } = useTranslate()
 	const [notification, setNotification] = useState({message: "", type: ""})
 	const [isLoading, setIsLoading] = useState(false)
 

@@ -5,12 +5,12 @@ import Notification from "./Notification"
 
 import styles from "../assets/styles/NewsletterSignup.module.css"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 import TextInput from "./TextInput"
 import Spinner from "./Spinner"
 
 const NewsletterSignup = (): JSX.Element => {
-	const { t } = translate()
+	const { t } = useTranslate()
 
 	const [notification, setNotification] = useState({message: "", type: ""})
 	const [isLoading, setIsLoading] = useState(false)

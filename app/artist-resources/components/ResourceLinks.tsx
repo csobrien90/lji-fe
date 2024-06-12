@@ -1,11 +1,11 @@
 import { Fragment } from 'react'
 import Link from 'next/link'
 
-import translate from '@/app/hooks/translation'
+import useTranslate from '@/app/hooks/translation'
 import { Permission } from '../accounts'
 
 export default async function ResourceLinks({ user, roles }: { user: any, roles: Permission[] }) {
-	const { t } = translate()
+	const { t } = useTranslate()
 	const resources = []
 
 	// Add a link to the CMS if the user is an admin

@@ -1,10 +1,10 @@
 import { BlogProps } from "../../types"
 import BlogPost from "./BlogPost"
 
-import translate from "@/app/hooks/translation"
+import useTranslate from "@/app/hooks/translation"
 
 const Blog = ({ blogPosts }: BlogProps) => {
-	const { t } = translate()
+	const { t } = useTranslate()
 	console.log(blogPosts)
 	return (
 		<section id="blog">

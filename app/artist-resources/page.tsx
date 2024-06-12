@@ -5,12 +5,12 @@ import Events from '../components/Events';
 import Grants from './components/Grants';
 import ResourceLinks from './components/ResourceLinks';
 
-import translate from '../hooks/translation';
+import useTranslate from '../hooks/translation';
 import { hasAccount, getRoles } from './accounts';
 import Link from 'next/link';
 
 export default async function ArtistResources() {
-	const { t } = translate();
+	const { t } = useTranslate();
 
 	// Get the user and session
 	const session = await getSession();
