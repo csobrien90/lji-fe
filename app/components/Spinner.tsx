@@ -1,5 +1,3 @@
-"use client";
-
 import styles from "../assets/styles/Spinner.module.css";
 
 const Spinner = () => {

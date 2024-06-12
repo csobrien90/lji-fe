@@ -1,6 +1,6 @@
 "use client"
 
-import { MouseEventHandler, SyntheticEvent, use } from "react"
+import { MouseEventHandler, SyntheticEvent } from "react"
 
 import styles from "../assets/styles/Modal.module.css"
 
