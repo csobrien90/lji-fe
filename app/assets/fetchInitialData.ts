@@ -31,6 +31,7 @@ export const fetchInitialData = async (): Promise<LjiData> => {
 		return acc
 	}, {})
 
+	console.log(categories)
 	return categories
 }
 
