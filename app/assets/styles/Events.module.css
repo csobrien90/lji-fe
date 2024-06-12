@@ -1,5 +1,6 @@
 .events {
 	gap: 2em;
+	align-content: baseline;
 }
 
 .events > a {

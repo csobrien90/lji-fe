@@ -10,13 +10,6 @@ import Card from "./Card"
 const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps) => {
 	const { t } = translate()
 
-	if (!events || events.length === 0) return (
-		<section className={styles.events}>
-			<h2>{t("eventsTitle")}</h2>
-			<p>{t("noEvents")}</p>
-		</section>
-	)
-
 	const filteredEvents: Event[] = events.sort((a: Event, b: Event): number => {
 		return a.epoch - b.epoch
 	}).filter((event: Event, index: number) => {
@@ -28,6 +21,13 @@ const Events = ({ limit = null, events, showPrivateEvents = false }: EventProps)
 
 		return isAllowed && isFuture
 	}).slice(0, limit || events.length) // Limit the number of events shown
+
+	if (!filteredEvents || filteredEvents.length === 0) return (
+		<section className={styles.events}>
+			<h2>{t("eventsTitle")}</h2>
+			<p>{t("noEvents")}</p>
+		</section>
+	)
 
 	return (
 		<section className={styles.events}>

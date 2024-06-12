@@ -1,9 +1,21 @@
 .social-media-links {
 	display: flex;
-	justify-content: flex-start;
+	justify-self: flex-end;
+	justify-content: center;
 	align-items: center;
-	gap: .5em;
+	gap: 0 .5em;
+	flex-wrap: wrap;
 	--social-media-icon-size: 40px;
+	padding: 1em;
+}
+
+.social-media-links > header {
+	flex-basis: 100%;
+	text-align: center;
+}
+
+.social-media-links > header > p {
+	font-size: var(--font-size-sm);
 }
 
 .social-media-links a {
@@ -31,6 +43,11 @@
 	transform: scale(1.1);
 }
 
+@media screen and (min-width: 500px) {
+	.social-media-links {
+		padding: 1em 2em;
+	}
+}
 
 @media screen and (min-width: 768px) {
 	.social-media-links a {

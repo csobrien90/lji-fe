@@ -3,7 +3,7 @@
   justify-items: stretch;
   position: relative;
   z-index: 200;
-  padding: 2em 1em;
+  padding: 1em;
 }
 
 .mailchimp-newsletter-form {
@@ -33,4 +33,10 @@
 .mailchimp-newsletter-form input[type="email"] {
 	width: 100%;
 	font-size: var(--font-size-sm);
+}
+
+@media screen and (min-width: 500px) {
+	.mcWrapper {
+		padding: 1em 2em;
+	}	
 }

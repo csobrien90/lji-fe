@@ -1,24 +1,21 @@
 .reach {
 	background: var(--lime);
-	margin: 0 -6em;
-}
-
-.reach {
 	display: grid;
 	margin: 0 -2em;
 	padding: 2em 0;
+	align-content: flex-start;
 }
 
 .reach h2, .reach > p:first-of-type {
-	padding-left: 16px;
+	padding: 0 16px;
 }
 
 @media (min-width: 768px) {
 	.reach {
-		margin: 0 -6em -6em;
+		margin: 0 -6em -4em;
 	}
 
 	.reach h2, .reach > p:first-of-type {
-		padding-left: 48px;
+		padding: 0 48px;
 	}
 }

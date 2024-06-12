@@ -2,16 +2,16 @@ import { LjiData } from '../types';
 
 export const defaultLjiData: LjiData = {
 	blogPosts: [
-		{
-			title: '',
-			body: '',
-			bodyImage: '',
-			bodyImageAlt: '',
-			author: '',
-			authorImage: '',
-			authorImageAlt: '',
-			datePublished: '',
-		}
+		// {
+		// 	title: '',
+		// 	body: '',
+		// 	bodyImage: '',
+		// 	bodyImageAlt: '',
+		// 	author: '',
+		// 	authorImage: '',
+		// 	authorImageAlt: '',
+		// 	datePublished: '',
+		// }
 	],
 	staff: [
 		{
