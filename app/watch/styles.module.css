@@ -1,0 +1,5 @@
+.switcher-wrapper > div {
+	max-width: 1200px;
+	width: calc(100vh * 16 / 9);
+	margin: 0 auto;
+}
