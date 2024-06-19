@@ -14,7 +14,19 @@ const accounts: Accounts = {
 			"admin",
 			"teaching-artist"
 		]
-	}
+	},
+	"kianadelmusic@gmail.com": {
+		roles: [
+			"admin",
+			"teaching-artist"
+		]
+	},
+	"dequan.tunstull@gmail.com": {
+		roles: [
+			"admin",
+			"teaching-artist"
+		]
+	},
 }
 
 const hasAccount = (email: Email) => accounts[email] ? true : false

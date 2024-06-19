@@ -32,6 +32,7 @@
 
 .mailchimp-newsletter-form input[type="email"] {
 	width: 100%;
+	line-height: 1.5;
 	font-size: var(--font-size-sm);
 }
 
